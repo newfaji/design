@@ -1,0 +1,434 @@
+/* 웹폰트 선언 */
+@font-face {
+    font-family: 'Pretendard';
+    font-weight: 400;
+    font-display: swap;
+    src: local('Pretendard Regular'), url(../fonts/Pretendard-Regular.woff2) format('woff2'), url(../fonts/Pretendard-Regular.woff) format('woff');
+}
+@font-face {
+    font-family: 'Pretendard';
+    font-weight: 700;
+    font-display: swap;
+    src: local('Pretendard Bold'), url(../fonts/Pretendard-Bold.woff2) format('woff2'), url(../fonts/Pretendard-Bold.woff) format('woff');
+}
+html, body {
+    font-family: 'Pretendard', sans-serif; /* 서체 */
+    font-size: 15px; /* 크기 */
+    color: #3d3d3d; /* 글자색상 */
+    font-weight: 400; /* 글자의 두께 */
+    line-height: 1.4; /* auto */
+    word-break: keep-all; /* 단어를 묶어서 줄바꿈 */
+}
+.wrapper { /* 홈페이지의 넓이를 제한하고 가운데 정렬 */
+    width: 1280px; /* 홈페이지 넓이 */
+    margin: 0 auto;  /* 가운데 정렬 */
+}
+#wrap { /* id="wrap"에 적용되는 스타일 */
+    min-width: 1280px;
+    /* PC형에서 wrapper사이즈보다 브라우저 넓이가 작을때
+       가로스크롤바가 생성되는데 오른쪽에 background가 
+       짤리는 현상이 생김.  
+       가로스크롤바가 생성되었을때도 홈페이지를 정상적으로 
+       서비스 하기 위해서 최소 넓이를 입력 */
+}
+/* 태그초기화 - 태그의 기본스타일 제거 */
+* {
+    padding: 0; /* 모든 태그의 여백삭제 */
+    margin: 0;
+    box-sizing: border-box;
+    /* padding하고 border는 넓이를 늘리는 요소인데 넓이를 늘리지 않도록 하는 속성 */
+}
+ul, ol, li { 
+    list-style: none; /* ul li앞에 동그라미 삭제 */
+}
+a { /* a태그는 파란색에 underline이 기본적으로 생성됨 */
+    text-decoration: none; /* underline 제거 */
+    color: inherit; 
+    /* 색상은 상속받아 - 파란색 말고 누군가가 상속해준 스타일을 적용  */
+}
+address, em {
+    /* em태그와 address태그는 기본적으로 글자가 기울어짐 
+       디자인상 기울어짐을 사용하기 위해서 쓰지 않음
+       최근 기울어짐 디자인을 하지 않음 
+       그래서 태그에 있는 기본 기울어짐을 초기화 함 */
+    font-style: normal;
+}
+/* 글자를 두껍게하고 글자크기를 조정하는 태그 - 
+   body가 선언한 속성대로 적용될 수 있도록 초기화 
+   브라우저가 기본적으로 적용한 스타일 적용되지 않도록 막기 */
+h1, h2, h3, h4, h5, h6, strong {
+    font-size: inherit;
+    font-weight: inherit;
+}
+/* button태그는 기본스타일 많음 */
+button {
+    background-color: transparent; /*배경투명*/
+    border: 0; /* 테두리 삭제 */
+    color: inherit; /* 브라우저가 주는 값 삭제 */
+    font-family: inherit; /* button은 서체도 바뀜 - 상속 */
+}
+
+.header {
+    /* body를 기준으로 정렬 
+        position값을 주면 (예외 relative) block요소라도 
+        콘텐츠가 존재하는 만큼만 넓이값이 있음...
+        block요소는 원래 넓이가 100%임.
+        이걸 기대하고 코딩하면 안된다..
+    */
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 100; 
+    /* position을 준 요소가 깔려서 안보일 때 사용 
+    z-index가 높은 요소가 더 위에 나타남. 
+    header 항상 위에 있어야 함.. 그래서 높은 숫자 100을 미리 줌 */
+    width: 100%; /* header가 absolute면 width:100% 필수 */
+    height: 100px;
+    color: #fff;
+}
+.header .logo {
+    float: left;
+    margin-top: 32px;
+}
+.header .gnb {
+    float: right;
+}
+.header .gnb ul {
+    display: flex;
+}
+.header .gnb ul li a {
+    font-size: 22px;
+    padding: 34px 28px;
+    /* padding을 2개만 써주면 첫번째값은 위아래 같이 적용 
+       두번째 값은 좌우 같이 적용 */
+    display: block;
+}
+
+.visual {
+    /* 넓이와 높이는 제한이기때문에 신중하게...
+    배경이 내부 콘텐츠 만큼 늘어나는게 아니라.... 
+    엄청 큼. 이 배경이미지를 모두 보이도록 하려고.. */
+    height: 900px;
+    background: url(../images/visual_bg.png) center center no-repeat;
+    border-radius: 0 0 200px 0; /* 시계방향 - 왼쪽상단 */
+    /* 이미지를 모서리둥글게 디자인했다면 대부분
+    이미지를 네모 반듯하게 저장하고 
+    css에서 둥글게 처리하는 경우가 많음 */
+    position: relative; /* photo absolute 정렬의 기준 */
+}
+.visual h2 {
+    text-align: center; /* 이미지가 가운데 */
+    padding: 351px 0 0 0;
+}
+.visual .photo {
+    width: 110px;
+    height: 110px;
+    background-color: #1A78DA;
+    color: #fff;
+    display: block;
+    border-radius: 100%;
+    /* 동그라미는 넓이와 높이를 주고 
+       border-radius:100%로 줌. */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    /* 내부에 있는 모든 요소 가운데 */
+    position: absolute; /* visual 기준 */
+    bottom: -55px;
+    left: calc(50% + 584px);
+    /* 사이즈가 크던 작던 가운데는 모두 동일한 위치 이기때문에
+        가운데를 기준(50%)으로 오른쪽으로 584px만큼 이동 
+       calc() 넓이나, 여백나 위치값 등을 계산할때 사용
+       %와 px처럼 단위가 다른 수는 계산할때 사용  */
+}
+.visual .photo i {
+    padding: 23px 0 5px 0;
+    display: block;
+}
+.visual .photo span {
+    display: block;
+    /* i태그와 span태그 모두 inline태그라
+    줄바꿈이 안됨. 이때 span태그에 block을
+    주면 넓이가 100%가 되서 줄이 바뀜 */
+    line-height: 1.1;
+}
+
+.culture {
+    margin-top: 140px;
+}
+.culture .inner {
+    position: relative;
+    /* more의 absolute 정렬의 기준 */
+}
+.culture h2 {
+    color: #1D1D1D;
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 18px;
+    letter-spacing: -0.05em;
+}
+.culture ul {
+    display: flex;
+    justify-content: space-between;
+}
+.culture ul li {
+    width: 299px;
+}
+.culture ul li a h3 {
+    font-size: 25px;
+    font-weight: 700;
+    margin: 6px 0 8px 0;
+    letter-spacing: -0.05em;
+}
+.culture .more {
+    /* inner를 기준으로 정렬 */
+    position: absolute;
+    right: 0;
+    top: 30px;
+    display: flex;
+    align-items: center;
+    /* 글자와 아이콘 사이즈가 다른 요소가 좌우로 들어갈때
+    서로 위아래 가운데 정렬 하려면 align-items:center */
+    /* border: 1px solid #999;
+    background-color: #ededed;
+    border-radius: 13px;  */
+    /* 좌우만 동그랗게 처리하려면 높이의 절반을 border-radius로 줌
+    border-radius:100% */
+    /* padding: 5px 13px;  */
+    /* 위아래 좌우 여백이 같은 경우 - 위아래값 좌우값 두개만 입력 */
+}
+.culture .more span {
+    margin-right: 10px;
+}
+
+.tour {
+    margin-top: 150px;
+}
+.tour h2 {
+    color: #1D1D1D;
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 18px;
+    letter-spacing: -0.05em;
+}
+.tour ul {
+    display: flex;
+    justify-content: space-between;
+}
+.tour ul li {
+    width: 190px;
+    /* a가 늘어난만큼 늘어남. li의 높이는 a한테 줌 
+      li사이즈와 a사이즈를 똑같이 주기 위해서 
+      li에 높이를 주고 a에 height:100%를 주면 안되는냐??
+      높이 100%는 안들어가는 경우가 많음
+      (넓이 100%는 됨) */
+    color: #fff;
+}
+.tour ul li.tour01 {
+    background: url(../images/tour01.png) center center no-repeat;
+}
+.tour ul li.tour02 {
+    background: url(../images/tour02.png) center center no-repeat;
+}
+.tour ul li.tour03 {
+    background: url(../images/tour03.png) center center no-repeat;
+}
+.tour ul li.tour04 {
+    background: url(../images/tour04.png) center center no-repeat;
+}
+.tour ul li a {
+    height: 294px;
+    display: block;
+    padding: 234px 0 0 0;
+}
+.tour ul li a h3 {
+    text-align: center;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: -0.05em;
+}
+.tour ul li a p {
+    display: none; /* 숨김 */
+}
+/* li.active li태그들 중에서 
+active 클래스를 준 li를 선택하는 선택자 */
+.tour ul li.active {
+    width: 626px;
+}
+.tour ul li.active a {
+    padding: 183px 190px 0 40px;
+}
+.tour ul li.active a h3 {
+    text-align: left;
+    font-size: 25px;
+    margin-bottom: 5px;
+}
+.tour ul li.active a p {
+    /* display:none으로 숨김처리한 것을 
+    다시 나타나게 하려면 display:none을 제외한 
+    그 어떠한 속성을 줘도 나타남.
+    단, 해당 스타일이 적용되기 때문에 맞춰서 줘야함
+    일반적으로 속성이 필요하지 않으면 block을 줌 */
+    display: block;
+}
+.tour .inner {
+    position: relative;
+    /* more absolute 정렬의 기준점 */
+}
+.tour .more {
+    /* inner를 기준으로 정렬 */
+    position: absolute;
+    right: 0;
+    top: 30px;
+    display: flex;
+    align-items: center;
+}
+.tour .more span {
+    margin-right: 10px;
+}
+
+.community {
+    height: 753px;
+    background: url(../images/community_bg.png) center center no-repeat;
+    color: #fff;
+    margin-top: 147px;
+}
+.community .inner {
+    display: flex;
+    padding-top: 180px;
+}
+.community .tit {
+    width: 338px;
+}
+.community .tit h2 {
+    font-size: 60px;
+    font-weight: 700;
+    letter-spacing: -0.05em;
+    line-height: 1;
+}
+.community .tit .sub_tit {
+    font-size: 40px;
+    margin: 15px 0 5px 0;
+}
+.community .notice {
+    width: 517px;
+    height: 319px;
+    border-radius: 20px;
+    background-color: rgba(10, 34, 48, 0.6);
+    padding: 40px 45px 0 45px;
+}
+.community .notice h3 {
+    font-size: 25px;
+    font-weight: 700;
+    letter-spacing: -0.05em;
+    margin-bottom: 16px;
+}
+.community .notice ul li {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+.community .notice ul li:last-child {
+    border-bottom: 0; /* 마지막 li는 border 그리지마 */
+}
+.community .notice ul li a {
+    line-height: 38px;
+    display: flex;
+    justify-content: space-between;
+}
+.community .notice ul li a span {
+    color: rgba(255, 255, 255, 0.8);
+}
+.community .service {
+    width: 395px;
+    margin-left: 30px;
+}
+.community .service ul {
+    display: flex;
+    /* flex는 하위요소를 모두다 좌우 한줄로 배치하려는 특징이 있음.
+    그래서 넓이를 줄여서라도 좌우로 배치
+    내 넓이에 따라서 한줄에 들어갈 수 있는 만큼만 들어가고 줄바꿈이 
+    되려면  flex-wrap: wrap; */
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.community .service ul li {
+    width: 190px;
+    /* li의 사이즈와 a사이즈를 동일하게 주려면
+    li 한테 넓이를 주고 a한테 높이를 주는 것이
+    best */
+    margin-bottom: 15px;
+}
+.community .service ul li a {
+    height: 152px;
+    background-color: rgba(10, 34, 48, 0.6);
+    border-radius: 15px;
+    display: block;
+    padding: 30px 20px 20px 30px;
+    position: relative; /* i태그 absolute 정렬의 기준 */
+}
+.community .service ul li a strong {
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: -0.05em;
+}
+.community .service ul li a i {
+    /* 감싸고 있는 a태그를 기준으로 정렬 */
+    position: absolute;
+    right: 15px;
+    bottom: 12px;
+}
+
+.footer {
+    background-color: #2d2d2d;
+    color: rgba(255, 255, 255, 0.8);
+    padding: 50px 0 70px 0;
+}
+.footer .footer_wrap {
+    display: flex;
+    justify-content: space-between;
+}
+.footer .f_nav {
+    display: flex;
+}
+.footer .f_nav li {
+    margin-right: 35px;
+    /* border-right: 1px solid rgba(255, 255, 255, 0.3); 
+        li 메뉴 사이에 선은 border로 코딩 불가 
+        높이가 제어가 안됨. 위에서 아래로 내리고 싶은 위치가 조정이 안됨. 
+        그래서 before after 선택자를 이용해서 선을 그어줌. */
+    position: relative; /* after 가상선택자 정렬의 기준 */
+}
+.footer .f_nav li::after {
+    position: absolute; /* 자유롭게 선을 긋기 위해서 absolute - li를 기준으로 정렬 */
+    right: -19px;
+    top: 4px;
+    width: 1px;
+    height: 11px;
+    background-color: rgba(255, 255, 255, 0.3);
+    content: ""; /* before after 가상선택자는 content 필수 */
+}
+.footer .f_nav li:last-child:after {
+    display: none; /* 마지막 li의 선을 숨기기 */
+}
+.footer .f_nav li.privacy {
+    font-weight: 700;
+}
+.footer .f_info {
+    display: flex;
+    margin: 18px 0;
+}
+.footer .f_info address,
+.footer .f_info span {
+    margin-right: 35px;
+}
+.footer .family_site button {
+    width: 150px;
+    line-height: 29px;
+    /* 버튼의 높이를 행간으로 줌. 
+    버튼은 그 높이를 갖어야하고 글자는 그 높이에 위아래 가운데 배치
+    그걸 한번에 해결하는게 line-height 
+    만약 내가 그냥 height로 줬다면 글자에 상단여백을 추가로 줘야함. */
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 9px; /* 위아래 - 좌우 */
+}

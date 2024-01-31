@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <!-- 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        아직 반응형을 안함. 그럼 이 코드를 입력하면 X 
+        이코드가 빠져야 모바일에 전체화면이 나오고 이용자는 확대해서 보면됨.
+    -->
+    <link rel="stylesheet" href="css/main.css">
+    <title>진흥기업 240119</title>
+</head>
+<body>
+    <!-- id는 동일한 이름 한페이지에서 한번밖에 사용이 불가 
+     id="container" 처럼 다른 이름은 되지만 같은 이름이 불가 
+    class="wrapper" 계속 쓰고 있지만 id는 그렇게 사용 불가 
+    주요 레이아웃에 id를 사용하는 편임.. -->
+    <div id="wrap">
+        <header>
+            <div class="wrapper">
+                <h1 class="logo"> 
+                    <!-- 홈페이지는 로고를 클릭하면 메인 페이지로 이동해야 한다. -->
+                    <a href="index.html">
+                        <img src="images/logo.png" alt="진흥기업 로고">
+                    </a>
+                </h1>
+                <!-- gnb : global navigation bar  -->
+                <nav class="gnb"> 
+                    <ul>
+                        <!-- # 임시링크 - 아직 링크걸 페이지가 없을때 잠시 클릭 방지를 위해서 써주는 말 -->
+                        <li><a href="#">기업소개</a></li>
+                        <li><a href="#">사업분야</a></li>
+                        <li><a href="#">홍보센터</a></li>
+                        <li><a href="#">고객센터</a></li>
+                        <li><a href="#">사이버감사실</a></li>
+                    </ul>
+                </nav>
+            </div><!--wrapper-->
+        </header>
+        <section class="visual">
+            <div class="wrapper">
+                <h2>사람과 사람을 이어주는 공간<br>
+                    사람과 자연을 조화시키는 공간</h2>
+                <p>을 창조하며, 대한민국 50년 건설 명가의 자리를 지켜왔습니다.</p>
+            </div><!--wrapper-->
+        </section><!-- visual -->
+        <section class="biz">
+            <div class="wrapper">
+                <h2><strong>BUSINESS</strong><br>50년 건설 명가</h2>
+                <ul>
+                    <li>
+                        <img src="images/biz01.png" alt="다리 사진">
+                        <h3>토목</h3>
+                        <p>인간과 자연을 조화시키고,<br> 
+                            공간과 공간을 이어주고 있습니다.</p>
+                        <a href="#">자세히보기</a>
+                    </li>
+                    <li>
+                        <img src="images/biz02.png" alt="건물 사진">
+                        <h3>건축</h3>
+                        <p>열정과 문화가 숨쉬는 건축,<br>
+                            진흥이 창조하고 있습니다.</p>
+                        <a href="#">자세히보기</a>
+                    </li>
+                    <li>
+                        <img src="images/biz03.png" alt="아파트 사진">
+                        <h3>주택</h3>
+                        <p>고객의 신뢰를 바탕으로<br>
+                            친환경 주거문화를 선도하고있습니다.  </p>
+                        <a href="#">자세히보기</a>
+                    </li>
+                    <li>
+                        <img src="images/biz04.png" alt="공장 사진">
+                        <h3>플랜트</h3>
+                        <p>오랜 노하우와 전문성을 가지고,<br>
+                            산업발전의 기틀을 구축해왔습니다.</p>
+                        <a href="#">자세히보기</a>
+                    </li>
+                </ul>
+            </div><!--wrapper-->
+        </section><!-- biz -->
+        <section class="brand">
+            <div class="wrapper">
+                <h2>POST-PREMIUM<br>
+                    HARRINGTON PLACE</h2>
+                <p>바래지 않는 멋스러움과 합리적 실용성을 겸비한 당신만의 공간</p>
+                <a href="#">해링턴 플레이스 바로가기</a>
+            </div><!--wrapper-->
+        </section><!-- brand -->
+        <footer>
+            <div class="wrapper">
+                <!-- footer navigation - 풋터의 메뉴 그래서 f_nav 
+                    nav태그를 쓰는 곳도 있고 대부분 nav 쓰지 않음 -->
+                <ul class="f_nav">
+                    <li><a href="#">법적고지</a></li>
+                    <li class="privacy"><a href="#">개인정보처리방침</a></li>
+                </ul>
+                <div class="copyright">© HYOSUNG. All Rights Reserved.</div>
+            </div><!--wrapper-->
+        </footer>
+    </div><!-- id wrap 종료 -->
+</body>
+</html>

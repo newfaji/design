@@ -1,0 +1,120 @@
+@font-face {
+    font-family: 'Pretendard';
+    font-weight: 400;
+    font-display: swap;
+    src: local('Pretendard Regular'), url(../../djbus/fonts/Pretendard-Regular.woff2) format('woff2'), url(../../djbus/fonts/Pretendard-Regular.woff) format('woff');
+}
+@font-face {
+    font-family: 'Pretendard';
+    font-weight: 900;
+    font-display: swap;
+    src: local('Pretendard Black'), url(../../djbus/fonts/Pretendard-Black.woff2) format('woff2'), url(../../djbus/fonts/Pretendard-Black.woff) format('woff');
+}
+html, body {
+    font-family: 'Pretendard', sans-serif; /* 서체 */
+    font-size: 15px; /* 크기 */
+    color: #3d3d3d; /* 글자색상 */
+    font-weight: 400; /* 글자의 두께 */
+    line-height: 1.4; /* auto */
+    word-break: keep-all; /* 단어를 묶어서 줄바꿈 */
+    letter-spacing: -0.05em; /* 자간 */
+}
+.wrapper { /* 홈페이지의 넓이를 제한하고 가운데 정렬 */
+    width: 1280px; /* 홈페이지 넓이 */
+    margin: 0 auto;  /* 가운데 정렬 */
+}
+#wrap { /* id="wrap"에 적용되는 스타일 */
+    min-width: 1280px;
+    /* PC형에서 wrapper사이즈보다 브라우저 넓이가 작을때
+       가로스크롤바가 생성되는데 오른쪽에 background가 
+       짤리는 현상이 생김.  
+       가로스크롤바가 생성되었을때도 홈페이지를 정상적으로 
+       서비스 하기 위해서 최소 넓이를 입력 */
+}
+/* 태그초기화 - 태그의 기본스타일 제거 */
+* {
+    padding: 0; /* 모든 태그의 여백삭제 */
+    margin: 0;
+    box-sizing: border-box;
+    /* padding하고 border는 넓이를 늘리는 요소인데 넓이를 늘리지 않도록 하는 속성 */
+}
+ul, ol, li { 
+    list-style: none; /* ul li앞에 동그라미 삭제 */
+}
+a { /* a태그는 파란색에 underline이 기본적으로 생성됨 */
+    text-decoration: none; /* underline 제거 */
+    color: inherit; 
+    /* 색상은 상속받아 - 파란색 말고 누군가가 상속해준 스타일을 적용  */
+}
+address, em {
+    /* em태그와 address태그는 기본적으로 글자가 기울어짐 
+       디자인상 기울어짐을 사용하기 위해서 쓰지 않음
+       최근 기울어짐 디자인을 하지 않음 
+       그래서 태그에 있는 기본 기울어짐을 초기화 함 */
+    font-style: normal;
+}
+/* h태그는 글자크기가 바뀌고 두께바뀜 - 브라우저가 준 속성
+  이걸 body태그에서 준 스타일대로 적용될 수 있도록 
+  - 브라우저가 준 스타일을 적용시키지 않도록  */
+h1, h2, h3, h4, h5, h6, strong {
+    font-size: inherit;
+    font-weight: inherit;
+}
+
+.service {
+    width: 400px;
+}
+
+.notice {
+    width: 500px;
+    height: 500px;
+    background-color: #ededed;
+    position: relative;
+    /* 내부요소 tit의 absolute 정렬의 기준점 */
+}
+.notice .tit {
+    width: 300px;
+    height: 200px;
+    border: 3px solid #ff6600;
+    position: absolute;
+    left: 100px;
+    top: 100px;
+    /* 감싸는 요소 notice가 position 값을
+    가지고 있어서 notice 기준으로 정렬 */
+}
+.notice .sub_tit {
+    position: absolute;
+    right: 50%;
+    bottom: 100px;
+    border: 5px solid blue;
+}
+.notice .cnt {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    border: 5px solid yellow;
+}
+
+.community {
+    margin: 100px 0 100px 0;
+}
+.community ul {
+    display: flex;
+}
+.community ul li {
+    position: relative;
+    /* after 가상선택자의 정렬 기준 */
+}
+.community ul li::after {
+    content: "사이";
+    color: red;
+    font-size: 11px;
+    /* 각자의 li를 기준으로 정렬 */
+    position: absolute;
+    right: -7px;
+    top: 53px;
+}
+.community ul li a {
+    padding: 50px; /* 4곳이 모두 같은값 */
+    display: block;
+}

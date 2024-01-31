@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/main2.css">
+    <title>대전복합터미널</title>
+</head>
+<body>
+    <div id="wrap"> <!-- 홈페이지 전체를 감싸는 요소 -->
+        <header class="header">
+            <div class="wrapper">
+                <!-- 이미지에 글자가 존재한다면 대체텍스트로 모든 문구를 써줘야함. 
+                    h1은 유일하지만 logo라고 class명을 주는게 일반적 
+                    로고를 클릭하면 홈페이지의 메인으로 이동을 함 -->
+                <h1 class="logo"><a href="index.html"><img src="images/logo.png" alt="Daejeon Terminal Complex 대전복합터미널"></a></h1>
+                <nav class="gnb"><!-- global navigation bar -->
+                    <ul>
+                        <li><a href="#">대전복합터미널 개요</a></li>
+                        <li><a href="#">버스 운행 안내</a></li>
+                        <li><a href="#">DTC아트센터</a></li>
+                        <li><a href="#">홍보마당</a></li>
+                        <li><a href="#">고객지원센터</a></li>
+                        <li><a href="#">(재)이구열 장학재단</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <div id="container"><!-- header와 footer를 제외한 모든 요소 -->
+            <section class="visual">
+                <div class="wrapper">
+                    <!-- 글자크기가 많이 차이나면 태그를 분리하는게 좋음
+                         제목 위아래에 꾸며주는 작은 문구를 strong태그를 많이 줌 -->
+                    <strong>365일 불이 꺼지지 않는 곳</strong>
+                    <h2>오늘도 대전복합터미널은<br> 
+                        내일을 위한 만남을 준비합니다.</h2>
+                </div>
+            </section>
+            <section class="biz">
+                <div class="wrapper">
+                    <!-- 이 div를 art라고 부를수도 있고 group이라고 부를 수도 있다. -->
+                    <div class="art group">
+                        <img src="images/biz01.png" alt="DTC아트센터 전시회 사진">
+                        <!-- 코딩때문에 콘텐츠를 묶어줘야 할 경우 class명을 inner라고 줌 -->
+                        <div class="inner">
+                            <h2>DTC 아트센터</h2>
+                            <!-- 제목 아래 컨텐츠를 sub_tit이라고 함 -->
+                            <p class="sub_tit">예술인들의 꿈이 자라나는 공간,<br>
+                                예술의 실험정신이 존중받는 공간</p>
+                            <p>전통에서 현대로 흐르는 다양한 예술세계가 펼쳐지는 문화예술공간을 상상합니다. </p>
+                            <div class="btn_wrap">
+                            <!-- button의 약자 btn 즉, 버튼을 묶음이라는 의미로 btn_wrap -->
+                                <a href="#">야외조각상</a>
+                                <a href="#">공연안내</a>
+                                <a href="#">행사신청</a>
+                            </div>
+                        </div>
+                    </div><!--art-->
+                    <div class="edu group">
+                        <div class="inner">
+                            <h2>이구열 장학재단</h2>
+                            <p class="sub_tit">대전터미널시티 인재육성 장학사업</p>
+                            <p>설립자 故 이구열(李九烈)회장의 뜻을 계승, 실천하고 있는 (재)이구열 장학재단은 現 이만희 회장에 의해 지역사회의 인재육성을 위한 장학 사업을 더욱 적극적으로 실천하고 있습니다.</p>
+                            <div class="btn_wrap">
+                                <a href="#">재단소개</a>
+                                <a href="#">기부금 모금 및 사용실적</a>
+                            </div>
+                        </div>
+                        <img src="images/biz02.png" alt="이구열장학재단 사진">
+                    </div><!-- edu -->
+                </div>
+            </section>
+            <section class="bbs">
+                <div class="wrapper">
+                    <div class="notice">
+                        <!-- 제목과 설명글 등의 묶음을 tit -->
+                        <div class="tit">
+                            <h2>DTC 공지사항</h2>
+                            <p>대전복합터미널의 새로운 소식을 만나보세요.</p>
+                            <a href="#">더보기</a>
+                            <!-- 원래 더보기는 공지사항 목록 ul 태그 밑에 존재해야함 
+                            웹 접근성상 공지사항 최근 게시물 1/2/3 보고 더 보고싶으면 
+                            더보기를 누르세요라는 흐름으로 코딩해야 함.-->
+                        </div>
+                        <ul>
+                            <li>
+                                <a href="#">
+                                    <!-- 제목 strong 날짜는 span태그로 묶음 
+                                    코딩할때 좌우로 떨어져 배치되기 때문에 -->
+                                    <strong>고객감동브랜드지수 8년 연속 1위</strong>
+                                    <span>2024.01.15</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <strong>제17회 대한민국 안전대상 [우수기업상] 수상</strong>
+                                    <span>2022.04.28</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <strong>터미널 시설 전화번호 안내</strong>
+                                    <span>2023.12.07</span>
+                                </a>
+                            </li>
+                            
+                        </ul>
+                        
+                    </div><!--notice-->
+                    <div class="video">
+                        <h2>DTC 홍보영상</h2>
+                        <ul>
+                            <li>
+                                <a href="#">
+                                    <img src="images/bbs_video01.png" alt="영상 썸네일">
+                                    <strong>버스터미널, 특별한 예술공간으로 변신</strong>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/bbs_video02.png" alt="영상 썸네일">
+                                    <strong>DTC 아트센터 봄 기획전 : 현대 미술로 세계를 보다</strong>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/bbs_video03.png" alt="영상 썸네일">
+                                    <strong>DTC 아트센터) 대전블루스 '2021 봄 기획전'</strong>
+                                </a>
+                            </li>
+                        </ul>
+                    </div><!--video-->
+                </div>
+            </section>
+        </div><!--container-->
+        <footer class="footer">
+            <div class="wrapper">
+                <!-- footer에 있는 메뉴는 nav 태그를 잘 사용하지 않음 -->
+                <ul class="f_nav">
+                    <li><a href="#">회사소개</a></li>
+                    <li><a href="#">사이트맵</a></li>
+                    <li><a href="#">이용약관</a></li>
+                    <li class="privacy"><a href="#">개인정보취급방침</a></li>
+                    <!-- li로 된 항목은 순서가 바뀌어도 스타일이 유지되어야 함. 
+                    특정항목에만 색상을 변경하려고 한다면 반드시 class를 별도로 줘야함
+                    last-child로 주면 안됨 -->
+                </ul>
+                <div class="f_info">
+                    <span>대전복합터미널(주)</span>
+                    <!-- 주소 태그 address  -->
+                    <address>주소 : 대전 동구 동서대로 1695번길 30</address>
+                    <span>TEL : 1668-3300</span>
+                    <span>사업자등록번호 : 306-81-02924</span>
+                </div>
+                <div class="copyright">COPYRIGHT 대전복합터미널(주) ALL RIGHTS RESERVED.</div>
+            </div><!--wrapper-->
+        </footer>
+    </div> <!--wrap-->
+</body>
+</html>

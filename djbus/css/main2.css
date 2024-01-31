@@ -1,0 +1,305 @@
+@font-face {
+    font-family: 'Pretendard';
+    font-weight: 400;
+    font-display: swap;
+    src: local('Pretendard Regular'), url(../fonts/Pretendard-Regular.woff2) format('woff2'), url(../fonts/Pretendard-Regular.woff) format('woff');
+}
+@font-face {
+    font-family: 'Pretendard';
+    font-weight: 900;
+    font-display: swap;
+    src: local('Pretendard Black'), url(../fonts/Pretendard-Black.woff2) format('woff2'), url(../fonts/Pretendard-Black.woff) format('woff');
+}
+body {
+    font-family: 'Pretendard', sans-serif; /* 서체 */
+    font-size: 15px; /* 크기 */
+    color: #3d3d3d; /* 글자색상 */
+    font-weight: 400; /* 글자의 두께 */
+    line-height: 1.4; /* auto */
+    word-break: keep-all; /* 단어를 묶어서 줄바꿈 */
+    letter-spacing: -0.05em; /* 자간 */
+}
+.wrapper { /* 홈페이지의 넓이를 제한하고 가운데 정렬 */
+    width: 1280px; /* 홈페이지 넓이 */
+    margin: 0 auto;  /* 가운데 정렬 */
+}
+#wrap { /* id="wrap"에 적용되는 스타일 */
+    min-width: 1280px;
+    /* PC형에서 wrapper사이즈보다 브라우저 넓이가 작을때
+       가로스크롤바가 생성되는데 오른쪽에 background가 
+       짤리는 현상이 생김.  
+       가로스크롤바가 생성되었을때도 홈페이지를 정상적으로 
+       서비스 하기 위해서 최소 넓이를 입력 */
+}
+/* 태그초기화 - 태그의 기본스타일 제거 */
+* {
+    padding: 0; /* 모든 태그의 여백삭제 */
+    margin: 0;
+    box-sizing: border-box;
+    /* padding하고 border는 넓이를 늘리는 요소인데 넓이를 늘리지 않도록 하는 속성 */
+}
+ul, ol, li { 
+    list-style: none; /* ul li앞에 동그라미 삭제 */
+}
+a { /* a태그는 파란색에 underline이 기본적으로 생성됨 */
+    text-decoration: none; /* underline 제거 */
+    color: inherit; 
+    /* 색상은 상속받아 - 파란색 말고 누군가가 상속해준 스타일을 적용  */
+}
+address, em {
+    /* em태그와 address태그는 기본적으로 글자가 기울어짐 
+       디자인상 기울어짐을 사용하기 위해서 쓰지 않음
+       최근 기울어짐 디자인을 하지 않음 
+       그래서 태그에 있는 기본 기울어짐을 초기화 함 */
+    font-style: normal;
+}
+
+.header {
+    height: 100px;
+}
+.header .logo {
+    float: left;
+    /* 내 자신이 감싸는 영역의 왼쪽으로 이동 */
+    margin: 23px 0 0 0;/* 위 오른쪽 아래 왼쪽 */
+}
+.header .gnb {
+    float: right;
+    /* 내 자신이 감싸는 영역의 오른쪽으로 이동 */
+}
+.header .gnb ul {
+    display: flex;
+    /* 내 자식 요소들이 좌우로 배치됨 */
+}
+.header .gnb ul li a {
+    color: #1D1D1D;
+    font-size: 20px;
+    padding:35px 18px 35px 18px;/* 위 - 오른쪽 - 아래 - 왼쪽 */
+    display: block;
+    /* a태그는 inline태그라서 padding이 적용되지 않음. 
+    block태그로 변경하여 값이 적용되도록 함. 
+    header의 높이가 100px이라 a태그의 높이가 100px을 넘으면 안됨*/
+}
+
+.visual {
+    height: 700px;
+    background: url(../images/visual_bg.png) center center no-repeat;
+    /* 배경에 큰 이미지를 넣는다고 이미지가 모두 다 보이는 것은 아님
+       배경이 모두 보이려면 반드시 영역에 높이를 줘야함. */
+    color: #fff;
+}
+.visual strong {
+    font-size: 25px;
+    font-weight: 400;
+    padding: 249px 0 0 0;
+    /* 상단 여백이 margin이 적용이 안되서 padding으로 수정 */
+    display: block;/* 여백이 적용되지 않아 block */
+}
+.visual h2 {
+    font-size: 45px;
+    font-weight: 900;
+    line-height: 1.2;
+}
+
+.biz {
+    margin: 121px 0 121px 0;
+}
+.biz .art,
+.biz .edu {
+    display: flex;
+}
+.biz .edu {
+    justify-content: flex-end;/* 오른쪽 정렬 */
+    margin: 60px 0 0 0;
+}
+.biz .art .inner {
+    margin: 70px 0 0 100px;
+}
+.biz .edu .inner {
+    margin: 70px 100px 0 0;
+    width: 420px; 
+    /* 긴문장을 넓이를 제한해서 줄바꿈주기 */
+    text-align: right;
+}
+.biz .art h2,
+.biz .edu h2 {
+    color: #1D1D1D;
+    font-size: 40px;
+    font-weight: 900;
+}
+.biz .art .sub_tit,
+.biz .edu .sub_tit {
+    color: #1D1D1D;
+    font-size: 20px;
+    margin: 10px 0 10px 0;
+}
+.biz .art .btn_wrap,
+.biz .edu .btn_wrap {
+    display: flex;
+    margin: 10px 0 0 0;
+}
+.biz .edu .btn_wrap {
+    justify-content: flex-end; /* 오른쪽정렬 */
+}
+.biz .art .btn_wrap a,
+.biz .edu .btn_wrap a {
+    border: 1px solid #999999;
+    padding: 9px 22px 9px 22px;
+    display: block;
+}
+.biz .art .btn_wrap a { /* 아트센터의 버튼은 오른쪽 여백 */
+    margin: 0 5px 0 0;
+}
+.biz .edu .btn_wrap a { /* 이우열의 버튼은 왼쪽 여백 */
+    margin: 0 0 0 5px;
+}
+
+.bbs {
+    /* 배경이 콘텐츠 높이보다 짧음. 배경 이미지 만큼 높이 못줌 - visual하고 다름 */
+    background: url(../images/bbs_bg.png) center top no-repeat;
+    color: #fff;
+}
+.bbs .notice {
+    display: flex;
+    justify-content: space-between; 
+    /* 하위 요소 두개를 좌우로 나란히 배치 flex 
+    하위 요소를 균등하게 영역에 좌우에 딱맞게 배치 space-between  */
+}
+.bbs .notice .tit {
+    margin: 110px 0 0 0;
+}
+.bbs .notice .tit h2 {
+    font-size: 40px;
+    font-weight: 900;
+}
+.bbs .notice .tit p {
+    /* 글자의 색상을 opacity를 조절했다면 
+    rgba로 투명한 색상을 표현한다.  
+    흰색은 rgb 255 
+    검은색은 rgb 0 
+    a는 alpha로 opacity값을 나타냄 
+    100% - 1 
+    80% - 0.8 */
+    color: rgba(255, 255, 255, 0.8);
+    margin: 4px 0 10px 0;
+}
+.bbs .notice .tit a {
+    color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    padding: 8px 20px 8px 20px; /*위 - 오른쪽 - 아래 - 왼쪽*/
+    display: inline-block;
+}
+.bbs .notice ul {
+    margin: 100px 0 0 0;
+    width: 735px;
+    /* ul의 넓이가 디자인보다 작아서 넓이를 줌. */
+}
+.bbs .notice ul li {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+}
+/* li가 몇개인지는 모르겠지만 무조건 마지막 li  */
+.bbs .notice ul li:last-child {
+    border-bottom: 0;
+    /* border를 빼기 = 두께를 0을 준다. */
+}
+.bbs .notice ul li a {
+    display: flex;
+    justify-content: space-between;
+    /* 제목과 날짜가 왼쪽끝 오른쪽 끝에 배치 */
+    line-height: 60px;
+    /* 공지사항 리스트 디자인을 할때 정확하게 줄간격을 주려고
+       행간으로 떨어뜨려 디자인... 
+       코딩도 정확하게 줄간격을 주기 위해서 line-height을
+       고정값으로 줌 */
+    font-size: 20px;
+}
+.bbs .notice ul li a strong {
+    font-weight: inherit;
+    /* strong 태그에 브라우저가 주는 스타일 말고 
+    내가 strong태그를 감싸는 요소에 준 스타일을 상속
+    브라우저가 주는 스타일 무시해!! */
+}
+.bbs .notice ul li a span {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.bbs .video {
+    margin: 95px 0 0 0 ;
+}
+.bbs .video h2 {
+    font-size: 40px;
+    font-weight: 900;
+    margin: 0 0 16px 0;
+}
+.bbs .video ul {
+    display: flex;
+    justify-content: space-between;
+}
+.bbs .video ul li {
+    width: 408px;
+    /* li안에 콘텐츠가 많고 넓어
+    그럼 넓이 제한해줘야 알아서 
+    글에는 줄바꿈이 들어감.
+    웬만하면 li에는 넓이를 주는편
+    (li가 나란히 들어갈 경우) */
+}
+.bbs .video ul li a strong {
+    color: #1D1D1D;
+    font-weight: inherit;
+    font-size: 20px;
+    margin: 15px 0 0 0;
+    display: block;
+}
+.bbs .video ul li a img {
+    border: 5px solid #01326C;
+    /* 이미지에 테두리를 주면 무조건 밖으로 테두리가 생김 */
+    box-shadow: 3px -3px 5px rgba(0,0,0,0.1);
+}
+
+.footer {
+    background-color: #2D2D2D;
+    color: rgba(255, 255, 255, 0.8);
+    margin: 120px 0 0 0;
+    padding: 57px 0 69px 0;
+    /* footer는 내부요소의 상단여백 하단 여백으로 하지 않고
+       footer에 padding을 준다. */
+}
+.footer .f_nav {
+    display: flex;
+}
+.footer .f_nav li {
+    margin: 0 30px 0 0;
+    /* border-left: 1px solid rgba(255, 255, 255, 0.4); 
+       메뉴 사이의 선은 border로 처리가 안됨. 
+       높이 조절이 불가 위아래 위치 조정이 안됨. */
+    position: relative;
+    /* 정렬의 기준 - li::after의 정렬기준 */
+}
+.footer .f_nav li::after {
+    position: absolute;
+    right: -17px;
+    top: 4px;
+    width: 1px;
+    height: 12px;
+    background-color: rgba(255, 255, 255, 0.4);
+    content: ""; /* after를 보이게하는 값 */
+}
+/* li중에 마지막 li의 after 가상요소를 선택  */
+.footer .f_nav li:last-child::after {
+    display: none;
+    /* 숨김 */
+}
+/* li들 중에서 privacy라는 class명을 갖은 li */
+.footer .f_nav li.privacy {
+    font-weight: 900;
+}
+.footer .f_info {
+    display: flex;
+    margin: 25px 0 18px 0;
+}
+.footer .f_info span,
+.footer .f_info address {
+    margin: 0 26px 0 0;
+}
+.footer .copyright {
+    color: rgba(255, 255, 255, 0.6);
+}
