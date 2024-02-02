@@ -45,7 +45,7 @@ html, body {
 
 .header {
     /* body를 기준으로 정렬 */
-    position: absolute;
+    position: fixed;
     left: 0;
     top: 0;
     z-index: 100; 
@@ -113,6 +113,22 @@ html, body {
     font-size: 0;
     line-height: 0;
 }
+/* header가 스크롤이 되면 jquery에서 header에 fixed라는 클래스를 
+추가할 예정. 그때의 스타일 */
+.header.fixed {
+    color: #1D1D1D;
+    border-bottom: 0;
+    background-color: #fff;
+}
+.header.fixed .logo a {
+    background: url(../images/logo.svg) no-repeat center center / contain;
+}
+.header.fixed .login {
+    background: url(../images/login.svg) no-repeat center center;
+}
+.header.fixed .lang {
+    background: url(../images/lang.svg) no-repeat center center;
+}
 @media screen and (max-width:640px){
     .header {
         height: 50px;
@@ -145,6 +161,9 @@ html, body {
     }
     .header .lang {
         display: none;
+    }
+    .header.fixed .gnb .gnb_open {
+        background: url(../images/gnb_open.svg) no-repeat center center;
     }
 }/* media */
 
@@ -193,3 +212,204 @@ html, body {
         display: none; 
     }
 }/*media*/
+
+.service {
+    margin: 60px 0 0 0;
+}
+.service h2 {
+    display: none; 
+    /* 웹표준상 제목을 썼지만 디자인에 없는 요소라 숨김 */
+}
+.service ul {
+    display: flex;
+}
+.service ul li {
+    width: 16.66%;
+    /* li가 6개라서 100/6 = 16.66 나눈값  */
+    text-align: center;
+}
+.service ul li a {
+    padding-top: 64px; /* 아이콘이 들어갈 자리 */
+    display: inline-block;
+    position: relative; /* before 정렬 기준 */
+}
+.service ul li a::before {
+    position: absolute; /* a를 기준으로 정렬 */
+    left: calc(50% - 39px);
+    top: 0;
+    content: "";
+    width: 78px;
+    height: 57px;
+}
+.service ul li.service01 a::before {
+    background: url(../images/service01.svg) no-repeat center center;
+}
+.service ul li.service02 a::before {
+    background: url(../images/service02.svg) no-repeat center center;
+}
+.service ul li.service03 a::before {
+    background: url(../images/service03.svg) no-repeat center center;
+}
+.service ul li.service04 a::before {
+    background: url(../images/service04.svg) no-repeat center center;
+}
+.service ul li.service05 a::before {
+    background: url(../images/service05.svg) no-repeat center center;
+}
+.service ul li.service06 a::before {
+    background: url(../images/service06.svg) no-repeat center center;
+}
+@media screen and (max-width:640px){
+    .service {
+        margin: 36px 0 0 0;
+    }
+    .service ul {
+        flex-wrap: wrap; /* 두줄 허용 */
+    }
+    .service ul li {
+        width: 33.33%;
+        margin-bottom: 10px;
+    }
+    .service ul li a {
+        padding-top: 50px; /* 아이콘의 사이즈 줄어서 여백도 바뀜 */
+        word-break: normal; /* 한 단어 줄바꿈 허용 */
+    }
+    .service ul li a::before {
+        left: calc(50% - 27px); /* 50% - 넓이의 반 */
+        width: 53px; /* 아이콘의 사이즈 */
+        height: 46px;
+    }
+    .service ul li a span {
+        display: none;
+    }
+    .service ul li.service01 a::before {
+        background-size: 46px auto; /* 넓이 px 높이는 비율에 맞게 자동 */
+    }
+    .service ul li.service02 a::before {
+        background-size: 39px auto;
+    }
+    .service ul li.service03 a::before {
+        background-size: 49px auto;
+    }
+    .service ul li.service04 a::before {
+        background-size: 39px auto;
+    }
+    .service ul li.service05 a::before {
+        background-size: 30px auto;
+    }
+    .service ul li.service06 a::before {
+        background-size: 39px auto;
+    }
+}/*media*/
+
+.service2 {
+    margin: 63px 0 0 0;
+}
+.service2 h2 {
+    display: none; 
+    /* 웹표준상 제목을 썼지만 디자인에 없는 요소라 숨김 */
+}
+.service2 ul {
+    display: flex;
+    justify-content: space-between;
+}
+.service2 ul li {
+    width: 200px;
+    /* li가 6개라서 100/6 = 16.66 나눈값  */
+}
+.service2 ul li a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 71px;
+    border: 1px solid #ccc;
+}
+.service2 ul li a span {
+    padding-left: 63px;
+    display: inline-block;
+    position: relative;
+}
+.service2 ul li a span::before {
+    position: absolute; /* span를 기준으로 정렬 */
+    left: 0;
+    top: 0;
+    content: "";
+    width: 63px;
+    height: 36px;
+}
+.service2 ul li.service01 a span::before {
+    background: url(../images/service01.svg) no-repeat center center;
+}
+.service2 ul li.service02 a span::before {
+    background: url(../images/service02.svg) no-repeat center center;
+}
+.service2 ul li.service03 a span::before {
+    background: url(../images/service03.svg) no-repeat center center;
+}
+.service2 ul li.service04 a span::before {
+    background: url(../images/service04.svg) no-repeat center center;
+}
+.service2 ul li.service05 a span::before {
+    background: url(../images/service05.svg) no-repeat center center;
+}
+.service2 ul li.service06 a span::before {
+    background: url(../images/service06.svg) no-repeat center center;
+}
+
+@media screen and (max-width:640px){
+    .service2 {
+        margin: 27px 0 0 0;
+    }
+    .service2 ul {
+        flex-wrap: wrap; /* 줄바꿈 허용 */
+    }
+    .service2 ul li {
+        /* 한줄에 3개이고 사이사이 여백 16px 
+          넓이는 % (한줄 3개 33.33% - 여백 px 총 여백 32px/3 )
+            한줄에 2개 50% - 총 여백 16px/2 
+            calc(50% - 8px)
+        */
+        width: calc(33.33% - 11px);
+    }
+    .service2 ul li a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 71px;
+        border: 1px solid #ccc;
+    }
+    .service2 ul li a span {
+        padding-left: 63px;
+        display: inline-block;
+        position: relative;
+    }
+    .service2 ul li a span::before {
+        position: absolute; /* span를 기준으로 정렬 */
+        left: 0;
+        top: 0;
+        content: "";
+        width: 63px;
+        height: 36px;
+    }
+    .service2 ul li.service01 a span::before {
+        background: url(../images/service01.svg) no-repeat center center;
+    }
+    .service2 ul li.service02 a span::before {
+        background: url(../images/service02.svg) no-repeat center center;
+    }
+    .service2 ul li.service03 a span::before {
+        background: url(../images/service03.svg) no-repeat center center;
+    }
+    .service2 ul li.service04 a span::before {
+        background: url(../images/service04.svg) no-repeat center center;
+    }
+    .service2 ul li.service05 a span::before {
+        background: url(../images/service05.svg) no-repeat center center;
+    }
+    .service2 ul li.service06 a span::before {
+        background: url(../images/service06.svg) no-repeat center center;
+    }
+}/*media*/
+.footer {
+    height: 500px;
+}
