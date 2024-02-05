@@ -410,6 +410,559 @@ html, body {
         background: url(../images/service06.svg) no-repeat center center;
     }
 }/*media*/
-.footer {
-    height: 500px;
+
+.biz {
+    margin: 80px 0 0 0;
 }
+.biz h2 {
+    color: #1D1D1D;
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+.biz ul {
+    display: flex;
+    justify-content: space-between;
+}
+/* .biz ul li:nth-child(2),
+.biz ul li:nth-child(4) {
+    margin-top: 20px;
+} */
+.biz ul li a {
+    /* a에 사이즈를 주면 li는 a사이즈와 동일 */
+    width: 308px;
+    height: 342px;
+    display: block;
+    color: #fff;
+    border-radius: 20px;
+    padding: 44px 40px 0 40px;
+    /* 높이를 준 경우는 왼쪽 오른쪽 위의 여백만 줌
+       하단의 여백은 안줘도 됨. 
+       어차피 높이를 고정으로 줘서 여백이 발생함
+       오히려 하단 여백을 주면 글자가 늘어날 경우 
+       높이가 바뀔 가능성이 있음 */
+    position: relative; /* more정렬의 기준 */
+}
+.biz ul li.biz01 a {
+    background-color: #1F3D83;
+}
+.biz ul li.biz02 a {
+    background-color: #097CBF;    
+}
+.biz ul li.biz03 a {
+    background-color: #2AC49E;
+}
+.biz ul li.biz04 a {
+    background-color: #1CA94B;
+}
+.biz ul li a::after {
+    position: absolute; /* a를 기준으로 정렬 */
+    content: ""; /* before/after 선택자가 보이게하는 값 */
+    background-repeat: no-repeat;
+    background-position: left top;
+    background-size: 100% auto;
+    /* after 선택자에 준 넓이에 딱 맞게 배경이미지
+       사이즈 조정 (높이는 비율에 맞게 조정) */
+    opacity: 0.1; 
+    /* 배경 투명처리가 없음 
+       전체 opacity를 투명하게 처리 */
+}
+.biz ul li.biz01 a::after {
+    right: 0;
+    bottom: 0;
+    width: 146px;
+    height: 144px;
+    background-image: url(../images/biz01.svg);
+    opacity: 0.05;
+}
+.biz ul li.biz02 a::after {
+    right: 13px;
+    bottom: -70px;
+    width: 133px;
+    height: 206px;
+    background-image: url(../images/biz02.svg);
+}
+.biz ul li.biz03 a::after {
+    right: -21px;
+    bottom: -13px;
+    width: 194px;
+    height: 155px;
+    background-image: url(../images/biz03.svg);
+}
+.biz ul li.biz04 a::after {
+    right: -16px;
+    bottom: -18px;
+    width: 155px;
+    height: 155px;
+    background-image: url(../images/biz04.svg);
+}
+.biz ul li a h3 {
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 10px;
+}
+.biz ul li a p {
+    color: rgba(255,255,255,0.8);
+}
+/* 위에 배치된 h3/p 문장의 길이가 길거나 짧아도 
+   디자인 동일한 위치에 배치되어야함.
+   상단여백으로 배치X 
+   position:absolute로 배치해야됨
+   (위 컨텐츠가 5줄거나 4줄여도 같은 위치에 
+   배치되어야 하므로) */
+.biz ul li a .more {
+    position: absolute; /* a를 기준으로 정렬 */
+    left: 40px;
+    bottom: 30px;
+    color: rgba(255,255,255,0.8);
+    padding-right: 25px;
+}
+.biz ul li a .more::after {
+    position: absolute; /* more를 기준으로 정렬 */
+    right: 0;
+    top: 1px;
+    width: 20px; /* 아이콘사이즈 */
+    height: 20px;
+    background: url(../images/biz_more.svg) no-repeat center center;
+    content: "";
+}
+@media screen and (max-width:640px){
+    .biz {
+        margin: 45px 0 0 0;
+    }
+    .biz h2 {
+        font-size: 25px;
+    }
+    .biz ul {
+        display: block;
+    }
+    .biz ul li {
+        margin-bottom: 5px;
+    }
+    .biz ul li a {
+        width: auto; 
+        /* a에 display:block있기때문에 넓이를 auto를
+        주면 100%가 적용됨 */
+        height: 121px;
+        border-radius: 10px;
+        padding: 21px 26px 0 26px;
+    }
+    .biz ul li a::after {
+        opacity: 0.5;
+    }
+    .biz ul li.biz01 a::after {
+        right: 37px;
+        bottom: 28px;
+        width: 66px;
+        height: 66px;
+        opacity: 0.5;
+    }
+    .biz ul li.biz02 a::after {
+        right: 37px;
+        bottom: 16px;
+        width: 59px;
+        height: 92px;
+    }
+    .biz ul li.biz03 a::after {
+        right: 30px;
+        bottom: 32px;
+        width: 74px;
+        height: 59px;
+    }
+    .biz ul li.biz04 a::after {
+        right: 29px;
+        bottom: 27px;
+        width: 68px;
+        height: 68px;
+    }
+    .biz ul li a h3 {
+        font-size: 20px;
+    }
+    .biz ul li a p {
+        display: none;
+    }
+    .biz ul li a .more {
+        position: relative;
+        left: auto;
+        bottom: auto;
+        padding-right: 20px;
+    }
+    .biz ul li a .more::after {
+        top: 2px;
+        width: 16px; /* 아이콘사이즈 */
+        height: 16px;
+        background-size: 16px auto;
+    }
+}/* media */
+
+.news {
+    margin-top: 110px;
+}
+.news h2 {
+    color: #1D1D1D;
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 17px;
+}
+.news ul li {
+    border: 1px solid #CCC;
+    margin-bottom: 5px;
+}
+.news ul li a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    line-height: 70px;
+    font-size: 17px;
+    /* 공지사항에 행간을 높이값으로 주면
+    높이도 들어가고 글자도 높이에 중간에 배치됨 */
+    padding: 0 57px; /* 위아래:0, 좌우:57px */
+}
+.news ul li a em {
+    color: #fff;
+    font-weight: 700;
+    line-height: 26px;
+    /* background 색상이 들어가는 만큼  */
+    padding: 0 13px;
+}
+.news ul li.notice1 a em {
+    background-color: #004289;
+}
+.news ul li.notice2 a em {
+    background-color: #009FE3;
+}
+.news ul li a strong {
+    color: #1D1D1D;
+    width: 900px; 
+    /* 글자가 들어갈 수 있는 최대 넓이 지정 
+       날짜는 자리수가 딱 정해져 있음 
+       왼쪽에 장학공지/일반공지도 자리수가 정해져있음
+       하지만 제목은 입력한 대로 길수도 있고 짧을 수도 있음 
+       그래서 글자가 들어갈 수 있는 최대 넓이를 제한 
+       그 넓이를 넘어가면 제목을 잘라버리기 위해서 */
+    white-space: nowrap; /* 줄바꿈 금지 */
+    overflow: hidden; /* 영역에서 넘치는 글자 숨김 */
+    text-overflow: ellipsis; 
+    /* 글자 끝에 ... 추가 
+      글자가 반이 짤려서 나타날 수 있기때문에 
+      이 현상을 막고 ...을 추가하는 방법 
+      점3개를 2개로 변경 불가. 점 삭제 불가 */
+}
+.news ul li a span {
+    color: #666;
+}
+.news .inner {
+    position: relative; /* more 정렬의 기준 */
+}
+.news .more {
+    position: absolute;
+    right: 0;
+    top: 15px;
+}
+.news .more a {
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    padding: 5px 39px 5px 18px;
+    color: #666;
+    display: block;
+    position: relative;
+}
+.news .more a::after {
+    position: absolute;
+    right: 18px;
+    top: 6px;
+    width: 20px; /* 아이콘사이즈 */
+    height: 20px;
+    background: url(../images/news_more.svg) no-repeat center center / contain;
+    /* pc와 모바일에서 아이콘 사이즈가 변경된다면 background-size를 미리 지정하는게 좋음
+       contain은 영역에 아이콘이 짤리지 않고 꽉차게 나오는 명령 */
+    content: "";
+}
+@media screen and (max-width:640px){
+    .news {
+        margin-top: 65px;
+    }
+    .news h2 {
+        font-size: 25px;
+    }
+    .news ul li a {
+        line-height: 35px;
+        font-size: 13px;
+        padding: 0 15px; /* 위아래:0, 좌우:57px */
+    }
+    .news ul li a em {
+        display: none;
+    }
+    .news ul li a strong {
+        width: calc(100% - 75px);
+        /* 모바일에서는 제목의 넓이가 디바이스의 넓이에 따라 바뀜
+           그래서 오른쪽 날짜와 여백값을 100%에서 빼줌
+           (날짜와 여백은 고정값이니까.) */
+    }
+    .news .more {
+        position: relative;
+        right: auto;
+        top: auto;
+        margin-top: 10px;
+        text-align: center;
+    }
+    .news .more a {
+        border: 0;
+        border-radius: 0;
+        padding: 0 20px 0 0;
+        display: inline-block;
+    }
+    .news .more a::after {
+        right: 0;
+        top: 1px;
+        width: 16px; /* 아이콘사이즈 */
+        height: 16px;
+    }
+}/* media */
+
+.webzine {
+    /* background때문에 여백을 padding으로 줌
+    padding은 내부여백이라 background가 padding영역까지 배치가능 */
+    padding: 154px 0 133px 0;
+    background: url(../images/webzine_bg.svg) no-repeat center top 80px / 2320px auto;
+}
+.webzine .inner {
+    /* tit과 ul을 나란히 배치하기 위해 */
+    display: flex;
+    justify-content: space-between;
+    /* more 정렬의 기준 */
+    position: relative;
+}
+.webzine .tit h2 {
+    color: #1D1D1D;
+    font-size: 40px;
+    font-weight: 700;
+}
+.webzine .tit strong {
+    font-size: 20px;
+    font-weight: 700;
+}
+.webzine ul {
+    display: flex;
+    /* justify-content: space-between; 적용되지 않음
+       ul은 감싸는 요소가 display:flex를 줬기 때문에 
+       넓이가 100%가 아님 ... 
+       그래서 justify-conten로 사이에 여백을 주려고 해도
+       줄 여백이 없음 (넓이가 없어서)
+       li한테 사이에 여백을 줘야함 */
+
+}
+.webzine ul li {
+    width: 308px;
+    margin-left: 16px;
+}
+.webzine ul li a {
+    background-color: #fff;
+    display: block;
+    border-radius: 20px;
+    overflow: hidden;
+    /* a안에 있는 이미지는 border-radius 영역 밖으로 나옴
+    그럼 해결방법 1. 이미지에 border-radus를 또 주는 방법 
+    해결방법 2. overflow:hidden;으로 border-radius 밖으로 나온
+    이미지 숨기기  */
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+}
+.webzine ul li a strong {
+    padding: 15px 24px 20px 24px;
+    display: block;
+    /* 제목 1줄로 자르기 */
+    white-space: nowrap; /* 줄바꿈 금지 */
+    overflow: hidden; /* 영역 밖에 나간 글자 숨기기 */
+    text-overflow: ellipsis; /* 글자가 반잘리는 현상 막기 */
+}
+.webzine .more {
+    position: absolute; /* inner가 정렬의 기준 */
+    left: 0;
+    top: 105px;
+}
+.webzine .more a {
+    display: block;
+    padding-right: 22px;
+    position: relative; /* after정렬기준 */
+}
+.webzine .more a::after {
+    position: absolute;
+    right: 0;
+    top: 2px;
+    width: 20px; /* 아이콘사이즈 */
+    height: 20px;
+    background: url(../images/news_more.svg) no-repeat center center / contain;
+    /* pc와 모바일에서 아이콘 사이즈가 변경된다면 background-size를 미리 지정하는게 좋음
+       contain은 영역에 아이콘이 짤리지 않고 꽉차게 나오는 명령 */
+    content: "";
+}
+
+@media screen and (max-width:640px){
+    .webzine {
+        padding: 58px 0 70px 0;
+        background-position: center top 140px;
+        background-size: cover; /* 넓이가 고정이 아니라 반드시 cover */
+    }
+    .webzine .inner {
+        display: block;
+    }
+    .webzine .tit {
+        display: flex;
+        align-items: flex-end; /* 좌우요소 하단 정렬 */
+    }
+    .webzine .tit h2 {
+        font-size: 25px;
+        margin-right: 5px;
+    }
+    .webzine .tit strong {
+        font-size: 15px;
+    }
+    .webzine ul {
+        margin-top: 15px;
+        justify-content: space-between;
+    }
+    .webzine ul li {
+        /* 100% 나누기 li 수 = 50% 
+        사이 여백의 합 16px 나누기 li 수 = 8px */
+        width: calc(50% - 8px);
+        margin-left: 0;
+    }
+    /* 원래 3개의 li가 있는데 모바일에서는 2개만 보임 
+       마지막 li를 숨김  */
+    .webzine ul li:last-child { 
+        display: none;
+    }
+    .webzine ul li a {
+        border-radius: 10px;
+    }
+    .webzine ul li a img {
+        width: 100%; 
+        /* 감싸는 요소의 넓이에 맞게 사이즈가 조절
+        이미지는 넓이만 주면 대부분 높이는 비율에 맞게 들어감 */
+    }
+    .webzine ul li a strong {
+        padding: 0 15px 5px 15px;
+    }
+    .webzine .more {
+        position: relative; /* inner가 정렬의 기준 */
+        left: auto;
+        top: auto;
+        text-align: center;
+        margin-top: 27px;
+    }
+    .webzine .more a {
+        display: inline-block;
+        padding: 5px 36px 5px 16px;
+        border: 1px solid rgba(255,255,255,0.2);
+        border-radius: 20px;
+        color: rgba(255,255,255,0.8);
+    }
+    .webzine .more a::after {
+        right: 16px;
+        top: 6px;
+        width: 16px; /* 아이콘사이즈 */
+        height: 16px;
+        background: url(../images/biz_more.svg) no-repeat center center / contain;
+        /* pc와 모바일에서 아이콘 사이즈가 변경된다면 background-size를 미리 지정하는게 좋음
+           contain은 영역에 아이콘이 짤리지 않고 꽉차게 나오는 명령 */
+    }
+}/* media */
+
+.footer {
+    background-color: #097CBF;
+    color: #fff;
+    padding: 0 0 88px 0;
+    /* footer 모바일에서 높이가 계속 바뀜.
+    그래서 처음부터 높이를 안줌 
+    위아래 여백 padding으로 줌 */
+}
+.footer .f_top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end; /* 하단의 기준으로 위아래 정렬 */
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    padding-bottom: 26px; /* 선과 콘텐츠 사이 여백 */
+}
+.footer .f_top .f_logo strong {
+    display: block; /* 하단 요소와 줄 바꿈 */
+    font-size: 40px;
+    font-weight: 700;
+    letter-spacing: -0.05em;
+}
+.footer .f_top .f_logo span {
+    display: block; /* 상단 요소와 줄바꿈 */
+    font-size: 30px;
+    line-height: 1.2;
+    letter-spacing: -0.05em;
+}
+.footer .f_top .f_nav ul {
+    display: flex;
+}
+.footer .f_top .f_nav ul li {
+    margin-right: 33px;
+    /* 모바일에서는 꼭 오른쪽에 여백이 들어가아햠
+    두줄로 바뀔때 오른쪽에 여백이 있어야 왼쪽 정렬이
+    잘됨 */
+    position: relative;
+}
+.footer .f_top .f_nav ul li:last-child {
+    margin-right: 0;
+    /* 마지막 li의 오른쪽 여백 삭제 */
+}
+.footer .f_top .f_nav ul li::after {
+    position: absolute;
+    right: -18px;
+    top: 10px;
+    width: 2px;
+    height: 2px;
+    border-radius: 100%; /* 최대한 동글게 */
+    background-color: rgba(255,255,255,0.5);
+    content: ""; /* before / after를 보이게 하는 값 */
+}
+.footer .f_top .f_nav ul li:last-child:after {
+    /* 마지막 li의 after는 숨김처리 */
+    display: none;     
+}
+.footer .f_btm {
+    margin-top: 16px;
+}
+.footer .f_btm .f_info span {
+    margin-right: 25px;
+}
+.footer .f_btm .f_info strong {
+    font-weight: 700;
+}
+.footer .f_btm .copyright {
+    margin-top: 38px;
+    color: rgba(255,255,255,0.8);
+}
+@media screen and (max-width:640px){
+    .footer .f_top {
+        display: block;
+        border-top: 1px solid rgba(255,255,255,0.2);
+        padding: 31px 0 15px 0; /* 선과 콘텐츠 사이 여백 */
+    }
+    .footer .f_top .f_logo strong {
+        font-size: 25px;
+    }
+    .footer .f_top .f_logo span {
+        font-size: 15px;
+    }
+    .footer .f_top .f_nav {
+        margin-top: 38px;
+    }
+    .footer .f_top .f_nav ul {
+        flex-wrap: wrap; /* 두줄 세줄 허용 */
+    }
+    .footer .f_top .f_nav ul li {
+        margin-right: 27px;
+    }
+    .footer .f_top .f_nav ul li::after {
+        right: -15px;
+        top: 7px;
+    }
+    .footer .f_btm .copyright {
+        margin-top: 25px;
+    }
+}/* media */
