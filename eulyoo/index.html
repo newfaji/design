@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+    <!-- swiper 라이브러리를 작동시키기 위한 js/css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
+    <script src="js/jquery-3.7.1.min.js"></script> <!-- jquery를 작동시키는 파일 js 맨위 선언 -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script src="js/main.js"></script>
+    <title>을유문화사</title>
+</head>
+<body>
+    <div id="wrap">
+        <header class="header"></header>
+        <section class="visual">
+            <div class="swiper"> 
+                <ul class="swiper-wrapper"> 
+                    <li class="swiper-slide"><img src="images/visual01.png" alt="책 사진"></li>
+                    <li class="swiper-slide"><img src="images/visual02.png" alt="책꽂이 사진"></li>
+                    <li class="swiper-slide"><img src="images/visual03.png" alt="책이 쌓여있는 사진"></li>
+                </ul>
+                <div class="pagination"></div> <!-- 팝업 수대로 동그라미 -->
+                <button class="prev">이전 팝업 보기</button><!--이전팝업보기-->
+                <button class="next">다음 팝업 보기</button><!--다음팝업보기-->
+                <button class="stop">일시정지</button><!--일시정지-->
+                <button class="play">실행</button><!--재생-->
+            </div>
+        </section>
+        <section class="book"></section>
+        <section class="interview"></section>
+        <section class="news"></section>
+        <footer class="footer"></footer>
+    </div>
+</body>
+</html>
