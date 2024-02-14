@@ -1,0 +1,220 @@
+@charset "utf-8";
+@import url(default.css);
+
+/* 웹폰트 선언 */
+@font-face {
+    font-family: 'Pretendard';
+    font-weight: 400;
+    font-display: swap;
+    src: local('Pretendard Regular'), url(../fonts/Pretendard-Regular.woff2) format('woff2'), url(../fonts/Pretendard-Regular.woff) format('woff');
+}
+@font-face {
+    font-family: 'Pretendard';
+    font-weight: 700;
+    font-display: swap;
+    src: local('Pretendard Bold'), url(../fonts/Pretendard-Bold.woff2) format('woff2'), url(../fonts/Pretendard-Bold.woff) format('woff');
+}
+html, body {
+    font-family: 'Pretendard', sans-serif; /* 서체 */
+    font-size: 15px; /* 크기 */
+    color: #3d3d3d; /* 글자색상 */
+    font-weight: 400; /* 글자의 두께 */
+    line-height: 1.4; /* auto */
+    word-break: keep-all; /* 단어를 묶어서 줄바꿈 */
+}
+.wrapper { /* 홈페이지의 넓이를 제한하고 가운데 정렬 */
+    width: 1280px; /* 홈페이지 넓이 */
+    margin: 0 auto;  /* 가운데 정렬 */
+}
+#wrap { /* id="wrap"에 적용되는 스타일 */
+    min-width: 1280px;
+    /* PC형에서 wrapper사이즈보다 브라우저 넓이가 작을때
+       가로스크롤바가 생성되는데 오른쪽에 background가 
+       짤리는 현상이 생김.  
+       가로스크롤바가 생성되었을때도 홈페이지를 정상적으로 
+       서비스 하기 위해서 최소 넓이를 입력 */
+}
+
+/* 640px 이하일때 스타일 - 640이하는 모바일 초과는 탭  */
+@media screen and (max-width:640px){
+    html, body {
+        font-size: 13px;
+    }
+    .wrapper { 
+        width: auto; 
+        /* 모바일에서는 홈페이지의 넓이를 제한하면 안됨 
+           디바이스의 넓이에 맞춰서 꽉차게 나와야 하기 때문에 
+           그 안쪽으로 좌우 여백이 20px씩 들어가게 함. */
+        margin: 0 20px;  
+    }
+    #wrap { 
+        min-width: auto;  /* 홈페이지의 최소넓이 제한하지 않음 */
+    }
+}/*media*/
+
+.notice {
+    margin: 50px 0;
+}
+.notice .list ul {
+    display: flex;
+    justify-content: space-between;
+}
+.notice .list ul li {
+    /* li가 4개 25% 
+       li사이에 여백이 28px - 전체여백은 28*3 = 84
+       li가 4개니까 여백을 4등분 - 84/4 = 21px */
+    width: calc(25% - 21px);
+}
+.notice .list ul li a {
+    display: block;
+}
+.notice .list ul li a span {
+    display: block;
+    /* span가 인라인태그 - 넓이 100%를 주는 방법 */
+    overflow: hidden;
+    /* 이미지가 확대될때 기존 span 태그의 영역을 넘어가면 
+       넘어간 만큼 숨김처리 */
+    font-size: 0;
+    line-height: 0;
+    /* 이미지 하단에는 여백이 존재하는데 이는 행간으로 발생한 여백
+       이 여백을 없애는 방법 */
+}
+.notice .list ul li a span img {
+    /* img를 감싸는 span태그의 넓이에 맞춰서 사이즈 조절
+      넓이만 주면 높이는 알아서 들어감 */
+    width: 100%;
+    transition: 1s;
+    /* 마우스를 올렸을때 이미지는 확대가 될꺼예요. 
+    확대를 자연스럽게 구현하기 위해서 오버전에 이미지에 
+    transition을 줘야함. */
+}
+.notice .list ul li a:hover span img {
+    transform: scale3d(1.2, 1.2, 1);
+}
+.notice .list ul li a strong {
+    display: block;
+    font-size: 17px;
+    font-weight: 700;
+    margin: 10px 0;
+    color: #1d1d1d;
+}
+.notice .list ul li a em {
+    display: block;
+}
+
+@media screen and (max-width:640px){
+    .notice .list ul {
+        flex-wrap: wrap;
+    }
+    .notice .list ul li {
+        /* li가 2개 50% 
+           li사이에 여백이 16px - 전체여백은 16 
+           li가 2개니까 여백을 2등분 - 16/2 = 8px */
+        width: calc(50% - 8px);
+        margin-bottom: 20px;
+    }
+}/* media */
+
+.news {
+    margin: 80px 0;
+}
+
+.news .list ul {
+    display: flex;
+    justify-content: space-between;
+}
+.news .list ul li {
+    width: 299px;
+}
+.news .list ul li a {
+    display: block;
+}
+.news .list ul li a span {
+    display: block;
+    height: 300px;
+    /* 이미지를 감싸는 요소는 반드시
+    넓이가 있어야 하고 (또는 display:block) 
+    높이는 px로 줘야 합니다. */
+    overflow: hidden;
+}
+.news .list ul li a span img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* 이미지는 반드시 넓이 높이 100%를 주고
+    object-fit: cover; 를 주면
+    제한 영역에 모든 이미지가 꽉차게 비율에 맞게
+    사이즈가 조정됨. */
+    transition: 0.5s;
+}
+.news .list ul li a:hover span img {
+    transform: scale3d(1.2, 1.2, 1);
+}
+@media screen and (max-width:640px){
+    .news .list ul {
+        flex-wrap: wrap;
+    }
+    .news .list ul li {
+        width: calc(50% - 8px);
+        margin-bottom: 20px;
+    }
+    .news .list ul li a span {
+        height: 150px;
+    }
+}/*media*/
+
+.board {
+    margin: 80px 0;
+}
+.board .list ul {
+    display: flex;
+    justify-content: space-between;
+}
+.board .list ul li {
+    width: 299px;
+}
+.board .list ul li a {
+    display: block;
+}
+.board .list ul li a span {
+    display: block;
+    height: 300px;
+    overflow: hidden;
+}
+.board .list ul li a span img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s;
+}
+.board .list ul li a:hover span img {
+    transform: scale3d(1.2, 1.2, 1);
+}
+
+@media screen and (max-width:640px){
+    .board .list {
+        overflow-x: auto;
+        /* list영역 안에 요소가 list 보다 크면
+        스크롤을 하고 작으면 안함 */
+    }
+    .board .list ul {
+        /* display:flex는 flex-wrap 설정을 변경하지 않는한
+        무조건 flex를 준 요소의 넓이 안에서 모든 하위요소를
+        좌우로 배치하려고 합니다. 
+        li에 사이즈를 아무리 입력해도 사이즈 조정해서라도 좌우로배치
+        li하나의 넓이 168px 
+        li사이의 여백 16px 
+        li가 입력한 사이즈를 유지하려면 ul이 넓이를 가져야함
+        li 사이즈 168 * li갯수 4 = 672px 
+        li사이의 여백 16 * li갯수-1 3 = 48px 
+        672 + 48 = 720px
+        */
+        width: 720px;
+    }
+    .board .list ul li {
+        width: 168px;
+    }
+    .board .list ul li a span {
+        height: 200px;
+    }
+}
