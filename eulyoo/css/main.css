@@ -26,6 +26,15 @@
     font-style:normal; 
 }
 
+*::selection {
+    background-color: #7A563C;
+    color: #fff;
+}
+*::-moz-selection { /* 호환성을 위한 코드 */
+    background-color: #7A563C;
+    color: #fff;
+}
+
 html, body {
     font-family: 'ey1945', serif; /* 서체 serif 명조 sans-serif 고딕 */
     font-size: 15px; /* 크기 */
@@ -46,6 +55,7 @@ html, body {
        짤리는 현상이 생김.  
        가로스크롤바가 생성되었을때도 홈페이지를 정상적으로 
        서비스 하기 위해서 최소 넓이를 입력 */
+    overflow: hidden;
 }
 
 /* 640px 이하일때 스타일 - 640이하는 모바일 초과는 탭  */
@@ -65,6 +75,150 @@ html, body {
     }
 }/*media*/
 
+.header {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+    height: 100px;
+    color: #fff;
+    transition: 0.5s; 
+    /* header에 나중에 마우스를 올리거나 class가 추가되거나
+       변화가 생겨서 스타일이 변경된다면 그때 천천히 변경돼.. */
+}
+.header .inner {
+    display: flex;
+    justify-content: space-between;
+}
+.header .logo {
+    margin: 34px 0 0 0;
+}
+.header .logo a {
+    width: 208px;
+    height: 35px;
+    display: block;
+    font-size: 0;
+    line-height: 0;
+    background: url(../images/logo_w.png) no-repeat center center / contain;
+    transition: 0.5s;
+}
+.header .gnb {
+    margin: 0 0 0 30px;
+}
+.header .gnb .gnb_open, 
+.header .gnb .gnb_close {
+    display: none;
+}
+.header .gnb ul.depth1 {
+    display: flex;
+}
+.header .gnb ul.depth1 > li {
+    width: 160px;
+}
+.header .gnb ul.depth1 > li > a {
+    display: block; /* width:100% */
+    line-height: 100px; /* 높이100px에 글자는 위아래 가운데 */
+    font-size: 22px;
+    font-weight: 700;
+}
+.header .gnb ul.depth2 { /* 2차메뉴 */
+    margin: 22px 0 0 0;
+    display: none;
+}
+.header .gnb ul.depth2 > li > a {
+    display: block; /* 넓이 100% - 글자가 짧아도 넓게 클릭 */
+    font-size: 17px;
+    line-height: 40px;
+}
+.header .tnb {
+    display: flex;
+}
+.header .tnb .login,
+.header .tnb .search {
+    width: 35px;
+    height: 35px;
+    margin: 30px 0 0 5px;
+    font-size: 0;
+    line-height: 0;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+.header .tnb .login {
+    background-size: 30px auto;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23FFF' viewBox='0 -960 960 960' %3E%3Cpath d='M480-492.309q-57.749 0-98.874-41.124-41.125-41.125-41.125-98.874 0-57.75 41.125-98.874 41.125-41.125 98.874-41.125 57.749 0 98.874 41.125 41.125 41.124 41.125 98.874 0 57.749-41.125 98.874-41.125 41.124-98.874 41.124ZM180.001-187.694v-88.922q0-29.384 15.962-54.422 15.961-25.038 42.653-38.5 59.308-29.077 119.654-43.615T480-427.691q61.384 0 121.73 14.538 60.346 14.538 119.654 43.615 26.692 13.462 42.653 38.5 15.962 25.038 15.962 54.422v88.922H180.001ZM240-247.693h480v-28.923q0-12.154-7.039-22.5-7.038-10.346-19.115-16.885-51.692-25.461-105.418-38.577Q534.702-367.693 480-367.693t-108.428 13.115q-53.726 13.116-105.418 38.577-12.077 6.539-19.115 16.885Q240-288.77 240-276.616v28.923Zm240-304.614q33 0 56.5-23.5t23.5-56.5q0-33-23.5-56.5t-56.5-23.5q-33 0-56.5 23.5t-23.5 56.5q0 33 23.5 56.5t56.5 23.5Zm0-80Zm0 384.614Z'/%3E%3C/svg%3E");
+    transition: 0.5s;
+}
+.header .tnb .search {
+    background-size: 28px auto;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 -960 960 960' fill='%23FFF'%3E%3Cpath d='M781.692-136.924 530.461-388.155q-30 24.769-69 38.769t-80.692 14q-102.55 0-173.582-71.014t-71.032-173.537q0-102.524 71.014-173.601 71.014-71.076 173.538-71.076 102.523 0 173.6 71.032T625.384-580q0 42.846-14.385 81.846-14.385 39-38.385 67.846l251.231 251.231-42.153 42.153Zm-400.923-258.46q77.308 0 130.962-53.654Q565.385-502.692 565.385-580q0-77.308-53.654-130.962-53.654-53.654-130.962-53.654-77.308 0-130.962 53.654Q196.154-657.308 196.154-580q0 77.308 53.653 130.962 53.654 53.654 130.962 53.654Z'/%3E%3C/svg%3E");
+    transition: 0.5s;
+}
+/* 브라우저가 스크롤 되었을때 디자인 변경 */
+.header.fixed {
+    background-color: #fff;
+    color: #1d1d1d;
+    box-shadow: 0 3px 5px rgba(0,0,0,0.05);
+}
+.header.fixed .logo a {
+    background-image: url(../images/logo.png);
+}
+.header.fixed .tnb .login {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%233d3d3d' viewBox='0 -960 960 960' %3E%3Cpath d='M480-492.309q-57.749 0-98.874-41.124-41.125-41.125-41.125-98.874 0-57.75 41.125-98.874 41.125-41.125 98.874-41.125 57.749 0 98.874 41.125 41.125 41.124 41.125 98.874 0 57.749-41.125 98.874-41.125 41.124-98.874 41.124ZM180.001-187.694v-88.922q0-29.384 15.962-54.422 15.961-25.038 42.653-38.5 59.308-29.077 119.654-43.615T480-427.691q61.384 0 121.73 14.538 60.346 14.538 119.654 43.615 26.692 13.462 42.653 38.5 15.962 25.038 15.962 54.422v88.922H180.001ZM240-247.693h480v-28.923q0-12.154-7.039-22.5-7.038-10.346-19.115-16.885-51.692-25.461-105.418-38.577Q534.702-367.693 480-367.693t-108.428 13.115q-53.726 13.116-105.418 38.577-12.077 6.539-19.115 16.885Q240-288.77 240-276.616v28.923Zm240-304.614q33 0 56.5-23.5t23.5-56.5q0-33-23.5-56.5t-56.5-23.5q-33 0-56.5 23.5t-23.5 56.5q0 33 23.5 56.5t56.5 23.5Zm0-80Zm0 384.614Z'/%3E%3C/svg%3E");
+}
+.header.fixed .tnb .search {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 -960 960 960' fill='%233d3d3d'%3E%3Cpath d='M781.692-136.924 530.461-388.155q-30 24.769-69 38.769t-80.692 14q-102.55 0-173.582-71.014t-71.032-173.537q0-102.524 71.014-173.601 71.014-71.076 173.538-71.076 102.523 0 173.6 71.032T625.384-580q0 42.846-14.385 81.846-14.385 39-38.385 67.846l251.231 251.231-42.153 42.153Zm-400.923-258.46q77.308 0 130.962-53.654Q565.385-502.692 565.385-580q0-77.308-53.654-130.962-53.654-53.654-130.962-53.654-77.308 0-130.962 53.654Q196.154-657.308 196.154-580q0 77.308 53.653 130.962 53.654 53.654 130.962 53.654Z'/%3E%3C/svg%3E");
+}
+@media screen and (max-width:640px){
+    .header {
+        height: 50px;
+    }
+    .header .logo {
+        margin: 17px 0 0 0;
+    }
+    .header .logo a {
+        width: 110px;
+        height: 19px;
+    }
+    .header .gnb {
+        margin: 0;
+    }
+    
+    .header .gnb .gnb_open, 
+    .header .gnb .gnb_close {
+        position: absolute; /* header를 기준으로 정렬 */
+        right: 0;
+        top: 0;
+        width: 60px;
+        height: 50px;
+        font-size: 0;
+        line-height: 0;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: 24px auto;
+    }
+    .header .gnb .gnb_open {
+        display: block;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 28' fill='%23fff' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3 21V18.6667H21V21H3ZM3 15.1667V12.8333H21V15.1667H3ZM3 9.33333V7H21V9.33333H3Z' /%3E%3C/svg%3E%0A");
+        transition: 0.5s;
+    }
+    .header .gnb .gnb_close {
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' fill='%23FFF' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6.4 19L5 17.6L10.6 12L5 6.4L6.4 5L12 10.6L17.6 5L19 6.4L13.4 12L19 17.6L17.6 19L12 13.4L6.4 19Z'/%3E%3C/svg%3E%0A");
+    }
+    .header .gnb ul.depth1 {
+        display: none;
+    }
+    .header .tnb {
+        display: none;
+    }
+    .header.fixed .gnb .gnb_open {
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 28' fill='%233d3d3d' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3 21V18.6667H21V21H3ZM3 15.1667V12.8333H21V15.1667H3ZM3 9.33333V7H21V9.33333H3Z' /%3E%3C/svg%3E%0A");
+    }
+}/* media */
+
+.visual {
+    position: relative;
+}
 .visual .swiper { 
     height:800px;
 }
@@ -135,7 +289,48 @@ html, body {
 .visual .swiper .pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
     background-color: #fff;
 }
-
+.visual .visual_txt {
+    position: absolute;
+    left: calc(50% - 640px);
+    top: 310px;
+    z-index: 10;
+    width: 1280px;
+    color: #fff;
+}
+.visual .visual_txt h2 {
+    font-size: 50px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+.visual .visual_txt p {
+    font-size: 20px;
+}
+.visual .visual_txt span {
+    position: absolute; /* visual_txt을 기준으로 정렬 */
+    left: 40px;
+    top: 45px;
+    font-size: 150px;
+    color: rgba(255,255,255,0.1);
+}
+@media screen and (max-width:1700px){
+    .visual .swiper .prev,
+    .visual .swiper .next {
+        width: 80px;
+        height: 30px;
+    }
+    .visual .swiper .prev {
+        left: 5px;
+    }
+    .visual .swiper .next {
+        right: 5px;
+    }
+}
+@media screen and (max-width:1400px){
+    .visual .swiper .prev,
+    .visual .swiper .next {
+        display: none;
+    }
+}
 @media screen and (max-width:640px){
     .visual .swiper { 
         height:373px;
@@ -161,4 +356,265 @@ html, body {
         width: 10px;
         height: 10px;
     }
+    .visual .visual_txt {
+        left: 20px;
+        top: 150px;
+        width: calc(100% - 40px);
+    }
+    .visual .visual_txt h2 {
+        font-size: 30px;
+        margin-bottom: 5px;
+    }
+    .visual .visual_txt p {
+        font-size: 13px;
+    }
+    .visual .visual_txt span {
+        display: none;
+    }
 }/* media */
+
+.book {
+    margin: 120px 0 0 0;
+}
+.book .inner {
+    position: relative; /* more 정렬의 기준 */
+}
+/*
+    왼쪽에  tit이 작게 있고
+    오른쪽에 list가 콘텐츠 영역 (wrapper) 밖으로 나가야함
+    그럼 tit에 아무리 넓이를 줘도 tit의 공간이 확보가 안됨
+    flex는 무조건 공간에 구겨서라도 넣으라고 하기 때문에
+    왼쪽에 있는 요소를 float:left를 줘서 부요요소로 만듬
+    (오른쪽있는 list는  tit을 인식하지 못함
+    tit은 공간을 차지하지 않음)
+    list는 왼쪽에 tit공간 포함해서 여백을 줘야함.
+    반드시 margin으로 
+*/
+
+.book .tit {
+    float: left;
+}
+.book .tit h2 {
+    color: #1d1d1d;
+    font-size: 50px;
+    font-weight: 700;
+    margin: 0 0 7px 0;
+}
+.book .list {
+    margin: 0 0 0 327px;
+}
+.book .list ul {
+    display: flex;
+    justify-content: space-between;
+    /* list의 사이즈 콘텐츠 영역의 넓이보다 큼 
+    그럼 정상적으로 나타나려면 ul에 넓이를 넓이를 줘야함 
+    li하나의 넓이 299px * li갯수 4   299*4 = 1196
+    li 사이의 여백 28px * li갯수 -1  28*3 = 84
+    합 1196 + 84 = 1280 
+    */
+    width: 1280px;
+}
+.book .list ul li {
+    width: 299px;
+}
+.book .list ul li a {
+    display: block; 
+    /* a태그 안에 많은 태그가 존재하면 block을 주는게 좋음 */
+}
+.book .list ul li a span {
+    display: block; /* width:100% */
+    height: 422px;
+    border: 1px solid #ededed;
+    box-shadow: 5px 5px 5px rgba(0,0,0,0.05);
+    overflow: hidden; /* 이미지가 확대 되었을때 밖으로 나가는 것 막기 */
+    transition: 0.5s;
+}
+.book .list ul li a span img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s;
+}
+.book .list ul li a:hover span {
+    border: 1px solid #ccc;
+    box-shadow: 10px 10px 10px rgba(0,0,0,0.1);
+    /* transform: translate(-10px, -10px); */
+}
+.book .list ul li a:hover span img {
+    transform: scale3d(1.2, 1.2, 1);
+}
+.book .list ul li a h3 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #1d1d1d;
+    margin: 22px 0 17px 0;
+}
+.book .list ul li a strong {
+    display: block;
+    margin: 0 0 17px 0;
+    /* 한줄만 허용하는 코드 */
+    white-space: nowrap; /* 줄바꿈 금지 */
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.book .list ul li a p {
+    /* 여러줄로 줄수를 제한하는 경우 */
+    line-height: 1.2;
+    height: 2.4em; /* 행간 * 줄수 */
+    overflow: hidden;
+}
+.book .more {
+    position: absolute; /* inner를 기준으로 */
+    left: 0;
+    top: 218px;
+}
+.book .more a {
+    width: 144px;
+    line-height: 45px;
+    border: 1px solid #999999;
+    display: block;
+    padding: 0 0 0 17px;
+    position: relative; /* after 정렬의 기준 */
+    transition: 0.2s;
+}
+.book .more a::after {
+    position: absolute; /* a를 기준으로 정렬 */
+    right: 18px;
+    top: 16px;
+    width: 20px;
+    height: 9px;
+    content: "";
+    background-image: url("data:image/svg+xml,%3Csvg width='23' height='11' viewBox='0 0 23 11' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11.7553 1L21 10H1' stroke='%233d3d3d' stroke-linecap='round'/%3E%3C/svg%3E%0A");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 20px auto;
+    transition: 0.2s;
+}
+.book .more a:hover {
+    background-color: #7A563C;
+    border: 1px solid #7A563C;
+    color: #fff;
+}
+.book .more a:hover::after {
+    background-image: url("data:image/svg+xml,%3Csvg width='23' height='11' viewBox='0 0 23 11' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11.7553 1L21 10H1' stroke='white' stroke-linecap='round'/%3E%3C/svg%3E%0A");
+    animation-name: more; 
+    animation-duration: 2s; 
+    animation-iteration-count:infinite; 
+    animation-timing-function:linear;
+}
+@keyframes more {
+    0% { transform:translate(0, 0) }
+    50% { transform:translate(-10px, 0) }
+    100% { transform:translate(0, 0) }
+}
+
+@media screen and (max-width:640px){
+    .book {
+        margin: 48px 0 0 0;
+    }
+    .book .tit {
+        float: none;
+        margin: 0 55px 0 0;
+        /* 오른쪽에 더보기가 존재할 영역을 콘텐츠가 겹치지 않게
+           미리 여백을 잡아줌 */
+    }
+    .book .tit h2 {
+        font-size: 25px;
+        margin: 0 0 5px 0;
+    }
+    .book .tit br { /* br태그를 없애서 줄바꿈을 삭제함 */
+        display: none;
+    }
+    .book .list {
+        margin: 19px 0 0 0;
+        overflow-x: auto;
+    }
+    .book .list ul {
+        /* list의 사이즈 콘텐츠 영역의 넓이보다 큼 
+        그럼 정상적으로 나타나려면 ul에 넓이를 넓이를 줘야함 
+        li하나의 넓이 167px * li갯수 4   167*4 = 668
+        li 사이의 여백 16px * li갯수 -1  16*3 = 48
+        합 668 + 48 = 716
+        */
+        width: 716px;
+    }
+    .book .list ul li {
+        width: 167px;
+    }
+    .book .list ul li a span {
+        height: 237px;
+    }
+    .book .list ul li a h3 {
+        font-size: 17px;
+        margin: 15px 0 12px 0;
+    }
+    .book .list ul li a strong {
+        margin: 0 0 12px 0;
+    }
+    .book .more {
+        /* pc버전에서는 left로 배치, 모바일에서는 right로 배치
+           left와 right가 동시에 선언되면 적용안됨
+           그래서 left를 auto로 해제하고 right를 줘야함 */
+        left: auto;
+        right: 0;
+        top: 5px;
+    }
+    .book .more a {
+        width: 40px;
+        line-height: 38px; /* border때문에 2px 늘어나서 2px 뺌 */
+        border-radius: 100%;
+        padding: 0 0 0 0;
+        text-align: center;
+        font-size: 11px;
+    }
+    .book .more a::after {
+        display: none;
+    }
+}/*media*/
+
+.interview {
+    background-color: #F5F1ED;
+    margin: 135px 0 0 0;
+}
+.interview .tit {
+    padding: 111px 0 0 0;
+    text-align: center;
+}
+.interview .tit h2 {
+    font-size: 50px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+.interview .list {
+    margin: 77px 0 0 0;
+}
+.interview .list ul {
+    display: flex;
+    justify-content: space-between;
+}
+.interview .list ul li {
+    width: 408px;
+}
+.interview .list ul li:nth-child(2) {
+    margin: 57px 0 0 0;
+}
+
+.interview .list ul li a {
+    display: block;
+}
+.interview .list ul li a .photo {
+    border-radius: 70px 0 70px 0;
+    overflow: hidden;
+    /* 이미지를 감싸는 요소에 border-radius를 주는 경우
+    overflow:hidden;을 꼭줘야 이미지가 짤림 */
+    font-size: 0;
+    line-height: 0;
+}
+/* 디자인상 두번째 li에 스타일이 다르다면 
+css에서도 nth-child로 선택한다. */
+.interview .list ul li:nth-child(2) a .photo {
+    border-radius: 0 70px 0 70px 0;
+}
+.interview .list ul li a .photo img {
+    filter: grayscale(100%); /* 흑백 */
+}
