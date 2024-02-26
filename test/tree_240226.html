@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('.tree > ul').children().addClass('red')
+            $('.tree').find('a').text('안녕')
+            /* find('a')는 tree안에 있는 모든 a를 찾음 
+               특정 요소만 찾는다면 해당 요소를 선택할 수 있는 class 주면됨 */
+            $('.tree > ul > li > a').next().addClass('next')
+            $('.tree > ul > li > a').parent().addClass('부모')
+            $('.tree > ul > li > a').parents().addClass('부모들')
+            $('.tree > ul > li > a').parents('.tree').addClass('tree부모')
+        })
+    </script>
+    <title>juqery tree</title>
+</head>
+<body>
+    <div class="tree">
+        <ul>
+            <li>
+                <a href="#n">1차메뉴</a>
+                <ul>
+                    <li><a href="#n">1-1차메뉴</a></li>
+                    <li><a href="#n">1-2차메뉴</a></li>
+                    <li><a href="#n">1-3차메뉴</a></li>
+                    <li><a href="#n">1-4차메뉴</a></li>
+                </ul>
+                <ul>
+                    <li><a href="">추가메뉴</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#n">2차메뉴</a>
+                <ul>
+                    <li><a href="#n">2-1차메뉴</a></li>
+                    <li><a href="#n">2-2차메뉴</a></li>
+                    <li><a href="#n">2-3차메뉴</a></li>
+                    <li><a href="#n">2-4차메뉴</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#n">3차메뉴</a>
+                <ul>
+                    <li><a href="#n">3-1차메뉴</a></li>
+                    <li><a href="#n">3-2차메뉴</a></li>
+                    <li><a href="#n">3-3차메뉴</a></li>
+                    <li><a href="#n">3-4차메뉴</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>

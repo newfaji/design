@@ -619,8 +619,23 @@ a태그중에서 href="#gnb"인 a태그의 스타일 */
         font-size: 20px;
     }
 }
-
+.lost .slogan {
+    position: absolute;
+    left: 20px;
+    top: -60px;
+    z-index: 10;
+    mix-blend-mode: difference;
+    animation:slogan_rotate; 
+    animation-duration:10s; 
+    animation-timing-function:linear; 
+    animation-iteration-count:infinite;
+}
+@keyframes slogan_rotate {
+    0% { transform:rotate(0) }
+    100% { transform:rotate(-360deg) }
+}
 .lost {
+    position: relative; /* slogan 정렬의 기준 */
     background-color: #0C3B57;
     color: #fff;
     padding-bottom: 105px;
@@ -764,6 +779,9 @@ a태그중에서 href="#gnb"인 a태그의 스타일 */
     transform: rotate(180deg);
 }
 @media screen and (max-width:1024px){
+    .lost .slogan {
+        display: none;
+    }
     .lost {
         padding-bottom: 80px;
     }
