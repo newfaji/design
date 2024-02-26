@@ -26,7 +26,7 @@ $(document).ready(function(){
     /* swiper */
     const swiper = new Swiper('.visual .swiper', { /* 팝업을 감싼는 요소의 class명 */
         autoplay: {  /* 팝업 자동 실행 */
-            delay: 1000,
+            delay: 3000,
             disableOnInteraction: true,
         },
         loop: true,  /* 마지막 팝업에서 첫번째 팝업으로 자연스럽게 넘기기 */
@@ -99,4 +99,61 @@ $(document).ready(function(){
         $(this).hide()
         $('.adopt .ctrl_btn .stop').show()
     })
-})
+
+    /* 관련사이트
+        site_open을 클릭하면 목록이 나타남
+            site_list 목록이 나타남 
+            site_open 사라짐
+            site_close 나타남
+        site_close을 클릭하면 목록이 사라짐  
+            site_list 목록이 사라짐
+            site_open 나타남
+            site_close 사라짐
+    */
+    $('.footer .family_site .site_open').on('click', function(){
+        $('.footer .family_site .site_list').slideDown()
+        $(this).hide()
+        $('.footer .family_site .site_close').show()
+    })
+    $('.footer .family_site .site_close').on('click', function(){
+        $('.footer .family_site .site_list').slideUp()
+        $(this).hide()
+        $('.footer .family_site .site_open').show()
+    })
+
+    /*
+        메뉴열기를 클릭하면 header에 menu_open 클래스 추가
+        메뉴닫기를 클릭하면 header에 menu_close 클래스가 삭제
+    */
+    $('.header .gnb .gnb_open').on('click', function(){
+        $('.header').addClass('menu_open')
+        $("html, body").css({overflow : "hidden", height : $(window).height()}).bind("scroll touchmove mousewheel", function(e){e.preventDefault();e.stopPropagation();return false;},function(){passive:false});
+    })
+    $('.header .gnb .gnb_close').on('click', function(){
+        $('.header').removeClass('menu_open')
+        $("html, body").css({overflow : "visible", height : "auto"}).unbind('scroll touchmove mousewheel');
+    })
+
+    /* 
+        1차메뉴 a를 클릭하면  
+           - a에 href링크를 작동안함..
+           - depth2는 slidedown으로 나타나게
+           - 클릭한 a의 부모 li에 sub_open 클래스를 추가
+          만약에 이미 열려있는 메뉴라면 닫음.
+          (열린메뉴를 판단하는 기준 - li에 sub_open이 있으나 없느냐)
+        -- 같은 버튼이 열기/닫기를 동시에 하는 경우
+    */
+    $(".header .gnb ul.depth1 > li:has(.depth2) > a").on("click", function(e){
+        e.preventDefault();		/* a 태그의 href를 작동 시키지 않음 */
+        if($(this).parent().hasClass('sub_open') == true){//sub_open있다면
+            console.log('sub_open있음')
+            $(this).parent().removeClass('sub_open')
+            $(this).parent().find('ul.depth2').slideUp()
+        }else{
+            console.log('sub_open없음')
+            $(this).parent().addClass('sub_open')
+            $(this).parent().find('ul.depth2').slideDown()
+        }
+    });
+
+})//document.ready
