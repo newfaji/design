@@ -1,9 +1,14 @@
 @import url(default.css);
 @import url(common.css);
-
+@import url(layout.css);
 /*
     파일명 : main.css
     작성자 : 문미영
     작성일 : 2024.02.28
     설  명 : 메인페이지에만 들어가는 스타일을 저장 (header, footer 빼고 전부 다)
 */
+
+.visual {
+    background: url(../images/main/visual01.png) no-repeat center center / cover;
+    height: 800px;
+}
