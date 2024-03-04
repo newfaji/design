@@ -2,7 +2,7 @@
     파일명 : layout.css
     작성자 : 문미영
     작성일 : 2024.02.28
-    설  명 : 모든 페이지의 레이아웃 요소 (header/footer/서브레이아웃)
+    설  명 : 모든 페이지의 레이아웃 요소 (header/.footer/서브레이아웃)
              메뉴명, sub_visual 이미지스타일, 탭메뉴 
 *******************************************************/
 .header {
@@ -184,6 +184,7 @@
 .header.fixed {
     color: #1d1d1d;
     background-color: #fff;
+    border-bottom: 1px solid #ededed;
 }
 .header.fixed .logo a {
     background-image: url(../images/common/logo.svg);
@@ -393,5 +394,138 @@
     }
 
 }
-@media screen and (max-width:500px){
+
+
+.footer {
+    background-color: #1D1D1D;
+    color: rgba(255,255,255,0.8);
+    padding: 68px 0 100px 0;
+}
+.footer .wrapper {
+    position: relative;
+}
+.footer .family_site {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.footer .family_site ul {
+    display: none;
+    position: absolute;
+    left: 0;
+    bottom: 36px;
+    z-index: 100;
+    width: 100%;
+    background-color: #666666;
+    border-radius: 20px;
+    padding: 20px;
+}
+.footer .family_site ul li a {
+    display: block;
+    line-height: 30px;
+}
+.footer .family_site ul li a:hover {
+    font-weight: 700;
+    text-decoration: underline;
+}
+.footer .family_site .open,
+.footer .family_site .close {
+    padding: 5px 77px 5px 20px;
+    display: block;
+    border: 1px solid rgba(255,255,255,0.5);
+    border-radius: 40px;
+    position: relative; /* after정렬의 기준 */
+}
+.footer .family_site .close {
+    display: none; /* 닫기 버튼은 숨김 */
+}
+.footer .family_site .open::after,
+.footer .family_site .close::after {
+    position: absolute;
+    right: 20px;
+    top: 11px;
+    width: 10px;
+    height: 10px;
+    content: "";
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.footer .family_site .open::after {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 9.667 9.667'%3E%3Cpath id='add_FILL0_wght200_GRAD0_opsz24' d='M244.43-714.764H240v-.806h4.43V-720h.806v4.43h4.43v.806h-4.43v4.43h-.806Z' transform='translate(-240 720)' fill='%23fff'/%3E%3C/svg%3E%0A");
+}
+.footer .family_site .close::after {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 9.667 0.806'%3E%3Cpath id='add_FILL0_wght200_GRAD0_opsz24' d='M240-714.764v-.806h9.667v.806Z' transform='translate(-240 715.57)' fill='%23fff'/%3E%3C/svg%3E%0A");
+}
+.footer .family_site.on .open {
+    display: none; /* 숨김 */
+}
+.footer .family_site.on .close {
+    display: block; /* 보임 */
+}
+.footer .family_site.on ul {
+    display: block; /* 보임 */
+}
+.footer .footer_nav ul {
+    display: flex;
+    flex-wrap: wrap; /* 두줄 허용 */
+}
+.footer .footer_nav ul li {
+    margin-right: 45px;
+    position: relative; /* after정렬의 기준 */
+}
+.footer .footer_nav ul li::after {
+    position: absolute;
+    right: -22px;
+    top: 4px;
+    width: 1px;
+    height: 10px;
+    background-color: rgba(255,255,255,0.3);
+    content: "";
+}
+.footer .footer_nav ul li:last-child:after {
+    /* 마지막 li의 선 삭제 */
+    display: none;
+}
+.footer .copyright {
+    margin-top: 20px;
+    color: rgba(255,255,255,0.6);
+}
+@media screen and (max-width:1024px){
+    .footer {
+        padding: 60px 0 70px 0;
+    }
+    .footer .family_site {
+        position: relative;
+        right: auto;
+        top: auto;
+        /* display: flex;
+        justify-content: center; */
+        margin-bottom: 38px;
+    }
+    .footer .family_site ul {
+        bottom: 34px;
+        border-radius: 7px;
+        padding: 10px 20px;
+    }
+    .footer .family_site .open,
+    .footer .family_site .close {
+        width: 100%;
+        background-color: #3D3D3D;
+        padding: 5px 0 5px 20px;
+        border: 0;
+        border-radius: 7px;
+        text-align: left;
+    }
+    .footer .footer_nav ul li {
+        margin-right: 35px;
+        margin-bottom: 8px;
+    }
+    .footer .footer_nav ul li::after {
+        right: -20px;
+        top: 7px;
+        width: 2px;
+        height: 2px;
+        border-radius: 100%;
+    }
 }

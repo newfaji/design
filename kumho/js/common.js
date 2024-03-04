@@ -94,4 +94,16 @@ $(document).ready(function(){
         $("html, body").css({overflow : "visible", height : "auto"}).unbind('scroll touchmove mousewheel');
     })
 
+    /*******************************************
+      footer에 그룹사 바로가기 열기/닫기
+      .footer .family_site .open를 클릭하면 family_site에 on 클래스 추가
+      .footer .family_site .close를 클릭하면 family_site에 on 클래스 삭제
+    *********************************************/
+    $('.footer .family_site .open').on('click', function(){
+        $('.footer .family_site').addClass('on')
+    })
+    $('.footer .family_site .close').on('click', function(){
+        $('.footer .family_site').removeClass('on')
+    })
+
 })//$(document).ready
