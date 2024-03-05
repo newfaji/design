@@ -4,3 +4,111 @@
     작성일 : 2024.02.28
     설  명 : 모든 콘텐츠 페이지별 디자인 스타일 저장
 */
+@import url(default.css);
+@import url(common.css);
+@import url(layout.css);
+
+/* ceo인사말 - 회사소개 */
+.cts_greeting {
+    margin: 134px 0 275px 0;
+    position: relative;
+}
+.cts_greeting .tit {
+    font-size: 25px;
+    font-weight: 700;
+    color: #1d1d1d;
+    margin: 0 0 60px 0;
+}
+.cts_greeting p {
+    margin: 0 600px 0 0;
+}
+.cts_greeting p strong {
+    font-size: 20px;
+    font-weight: 700;
+    color: #1d1d1d;
+}
+.cts_greeting p strong span {
+    color: #F51919;
+}
+.cts_greeting .ceo {
+    position: absolute;
+    left: calc(50% + 95px);
+    top: -10px;
+}
+.cts_greeting .ceo .photo {
+    position: relative;
+    font-size: 0;
+    line-height: 0;
+}
+.cts_greeting .ceo .photo::before {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 640px;
+    height: 594px;
+    background-color: #F4F4F4;
+    border-radius: 300px 0 0 0;
+    content: "";
+}
+.cts_greeting .ceo .photo img {
+    position: relative;
+}
+.cts_greeting .ceo .sign {
+    display: flex;
+    align-items: flex-start;
+    margin: 40px 0 0 0;
+}
+.cts_greeting .ceo .sign strong {
+    display: block;
+    margin: 10px 30px 0 0;
+    font-size: 20px;
+    font-weight: 700;
+    color: #1d1d1d;
+}
+@media screen and (max-width:1320px){
+    .cts_greeting p {
+        margin: 0 500px 0 0;
+    }
+    .cts_greeting .ceo {
+        position: absolute;
+        left: auto;
+        right: 0;
+        top: auto;
+        bottom: 0;
+    }
+    .cts_greeting .ceo .photo img {
+        width: 400px;
+    }
+}
+@media screen and (max-width:1024px){
+    .cts_greeting .tit br.mno {
+        display: none;
+    }
+    .cts_greeting p {
+        margin: 0;
+    }
+    .cts_greeting .ceo {
+        position: relative;
+        right: auto;
+        bottom: auto;
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: flex-end;
+    }
+    .cts_greeting .ceo .photo {
+        height: 300px;
+        overflow: hidden;
+    }
+    .cts_greeting .ceo .photo::before {
+        display: none;
+    }
+    .cts_greeting .ceo .photo img {
+        width: 100%;
+    }
+    .cts_greeting .ceo .sign {
+        display: block;
+    }
+}
+@media screen and (max-width:768px){
+    
+}
