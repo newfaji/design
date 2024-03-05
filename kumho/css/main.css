@@ -482,3 +482,157 @@
         margin: 7px 20px 20px 20px;
     }
 }
+
+.service {
+    background: url(../images/main/service_bg.png) no-repeat center center / cover;
+    color: #fff;
+    padding: 166px 0 113px 0;
+    margin-top: 100px;
+}
+.service .tit h2 {
+    display: none;
+}
+.service .tit p {
+    margin-top: 7px;
+    font-size: 35px;
+    line-height: 1.2;
+}
+.service .list {
+    margin-top: 45px;
+}
+.service .list ul {
+    display: flex;
+    justify-content: space-between;
+}
+.service .list ul li {
+    width: calc(33.33% - 18.66px);
+    background-color: #fff;
+    color: #3d3d3d;
+    transition: 0.5s;
+}
+
+.service .list ul li a {
+    display: block;
+    height: 95px;
+    padding: 22px 0 0 110px;
+    position: relative; /* before 정렬의 기준 */
+}
+.service .list ul li a::before {
+    position: absolute;
+    left: 50px;
+    top: 24px;
+    width: 38px;
+    height: 42px;
+    content: "";
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.service .list ul li.esg a::before {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 35.425 39.811'%3E%3Cpath id='potted_plant_FILL0_wght200_GRAD0_opsz24' d='M171.011-801.634h13.318a1.417,1.417,0,0,0,.937-.319,1.819,1.819,0,0,0,.553-.788l2.555-10.176H166.966l2.555,10.176a1.818,1.818,0,0,0,.554.788A1.417,1.417,0,0,0,171.011-801.634Zm0,2.214a3.622,3.622,0,0,1-2.286-.771,3.745,3.745,0,0,1-1.337-2.01l-2.7-10.716h25.973l-2.7,10.716a3.859,3.859,0,0,1-1.337,1.989,3.56,3.56,0,0,1-2.286.792Zm-7.264-15.711h27.931a1.5,1.5,0,0,0,1.107-.426,1.444,1.444,0,0,0,.426-1.064v-3.79h-31v3.79a1.408,1.408,0,0,0,.447,1.064A1.515,1.515,0,0,0,163.747-815.131Zm13.923-12.816a10.089,10.089,0,0,1,3.428-7.686,13.288,13.288,0,0,1,7.983-3.6,12.54,12.54,0,0,1-3.325,7.273,12.6,12.6,0,0,1-6.979,3.917v5.416h16.648v6a3.533,3.533,0,0,1-1.109,2.616,3.639,3.639,0,0,1-2.638,1.088H163.747a3.639,3.639,0,0,1-2.638-1.088A3.533,3.533,0,0,1,160-816.621v-6h16.563v-5.416a12.651,12.651,0,0,1-6.979-3.9,12.477,12.477,0,0,1-3.325-7.293,13.289,13.289,0,0,1,7.962,3.619A10.081,10.081,0,0,1,177.67-827.947Z' transform='translate(-160 839.23)' fill='%23666'/%3E%3C/svg%3E%0A");
+}
+.service .list ul li.ir a::before {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 37.67 39.81'%3E%3Cpath id='account_balance_FILL0_wght200_GRAD0_opsz24' d='M148.13-842.253V-860.06h2.226v17.808Zm11.13,0V-860.06h2.226v17.808Zm-17.722,6.678V-837.8h37.67v2.226Zm28.852-6.678V-860.06h2.226v17.808Zm-28.852-22.259V-866.4l18.835-8.989,18.835,8.989v1.883Zm5.882-2.226h0Zm0,0h25.906l-12.953-6.121Z' transform='translate(-141.538 875.385)' fill='%23666'/%3E%3C/svg%3E%0A");
+}
+.service .list ul li.webzine a::before {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30.312 41.571'%3E%3Cpath id='book_5_FILL0_wght200_GRAD0_opsz24' d='M204.289-846.429a4.289,4.289,0,0,1-3.029-1.172A3.8,3.8,0,0,1,200-850.5v-28.913a4.268,4.268,0,0,1,1.147-2.952,5.127,5.127,0,0,1,2.829-1.62L222.984-888v31.645L203.8-852.2a2.509,2.509,0,0,0-1.145.6,1.433,1.433,0,0,0-.491,1.1,1.713,1.713,0,0,0,.633,1.376,2.247,2.247,0,0,0,1.491.531h23.859v-32.478h2.165v34.643Zm3.04-8.7,13.491-2.944v-27.248l-13.491,2.861Zm-2.165.45v-27.331l-.937.2a2.691,2.691,0,0,0-1.474.847,2.24,2.24,0,0,0-.587,1.543v25.695a6.293,6.293,0,0,1,.8-.4,5.1,5.1,0,0,1,.839-.26Zm-3-26.882v0Z' transform='translate(-200 888)' fill='%23666'/%3E%3C/svg%3E%0A");
+}
+.service .list ul li a strong {
+    display: block;
+    font-size: 20px;
+    font-weight: 700;
+    color: #1D1D1D;
+}
+.service .list ul li a span {
+    display: block;
+}
+@media screen and (min-width:1025px){
+    .service .list ul li:hover {
+        transform: translate(-10px, -10px); /* 왼쪽상단으로 이동 */
+        box-shadow: 10px 10px 10px rgba(0,0,0,0.5);
+    }
+}
+@media screen and (max-width:1320px){
+    .service .tit p {
+        font-size: 30px;
+    }
+    .service .list ul li a {
+        padding: 22px 0 0 75px;
+    }
+    .service .list ul li a::before {
+        left: 30px;
+    }
+}
+@media screen and (max-width:1024px){
+    .service {
+        padding: 85px 0 50px 0;
+        margin-top: 70px;
+    }
+    .service .tit p {
+        font-size: 25px;
+    }
+    .service .list ul {
+        backdrop-filter: blur(20px) brightness(90%);
+        border-radius: 10px;
+    }
+    .service .list ul li {
+        border-radius: 10px;
+        width: 33.33%;
+        background-color: transparent;
+        color: #fff;
+    }
+    .service .list ul li a {
+        padding: 70px 0 20px 0;
+        text-align: center;
+        height: auto;
+    }
+    .service .list ul li a::before {
+        left: 0;
+        top: 25px;
+        width: 100%;
+        height: 30px;
+    }
+    .service .list ul li.esg a::before {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 35.425 39.811'%3E%3Cpath id='potted_plant_FILL0_wght200_GRAD0_opsz24' d='M171.011-801.634h13.318a1.417,1.417,0,0,0,.937-.319,1.819,1.819,0,0,0,.553-.788l2.555-10.176H166.966l2.555,10.176a1.818,1.818,0,0,0,.554.788A1.417,1.417,0,0,0,171.011-801.634Zm0,2.214a3.622,3.622,0,0,1-2.286-.771,3.745,3.745,0,0,1-1.337-2.01l-2.7-10.716h25.973l-2.7,10.716a3.859,3.859,0,0,1-1.337,1.989,3.56,3.56,0,0,1-2.286.792Zm-7.264-15.711h27.931a1.5,1.5,0,0,0,1.107-.426,1.444,1.444,0,0,0,.426-1.064v-3.79h-31v3.79a1.408,1.408,0,0,0,.447,1.064A1.515,1.515,0,0,0,163.747-815.131Zm13.923-12.816a10.089,10.089,0,0,1,3.428-7.686,13.288,13.288,0,0,1,7.983-3.6,12.54,12.54,0,0,1-3.325,7.273,12.6,12.6,0,0,1-6.979,3.917v5.416h16.648v6a3.533,3.533,0,0,1-1.109,2.616,3.639,3.639,0,0,1-2.638,1.088H163.747a3.639,3.639,0,0,1-2.638-1.088A3.533,3.533,0,0,1,160-816.621v-6h16.563v-5.416a12.651,12.651,0,0,1-6.979-3.9,12.477,12.477,0,0,1-3.325-7.293,13.289,13.289,0,0,1,7.962,3.619A10.081,10.081,0,0,1,177.67-827.947Z' transform='translate(-160 839.23)' fill='%23fff'/%3E%3C/svg%3E%0A");
+    }
+    .service .list ul li.ir a::before {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 37.67 39.81'%3E%3Cpath id='account_balance_FILL0_wght200_GRAD0_opsz24' d='M148.13-842.253V-860.06h2.226v17.808Zm11.13,0V-860.06h2.226v17.808Zm-17.722,6.678V-837.8h37.67v2.226Zm28.852-6.678V-860.06h2.226v17.808Zm-28.852-22.259V-866.4l18.835-8.989,18.835,8.989v1.883Zm5.882-2.226h0Zm0,0h25.906l-12.953-6.121Z' transform='translate(-141.538 875.385)' fill='%23fff'/%3E%3C/svg%3E%0A");
+    }
+    .service .list ul li.webzine a::before {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30.312 41.571'%3E%3Cpath id='book_5_FILL0_wght200_GRAD0_opsz24' d='M204.289-846.429a4.289,4.289,0,0,1-3.029-1.172A3.8,3.8,0,0,1,200-850.5v-28.913a4.268,4.268,0,0,1,1.147-2.952,5.127,5.127,0,0,1,2.829-1.62L222.984-888v31.645L203.8-852.2a2.509,2.509,0,0,0-1.145.6,1.433,1.433,0,0,0-.491,1.1,1.713,1.713,0,0,0,.633,1.376,2.247,2.247,0,0,0,1.491.531h23.859v-32.478h2.165v34.643Zm3.04-8.7,13.491-2.944v-27.248l-13.491,2.861Zm-2.165.45v-27.331l-.937.2a2.691,2.691,0,0,0-1.474.847,2.24,2.24,0,0,0-.587,1.543v25.695a6.293,6.293,0,0,1,.8-.4,5.1,5.1,0,0,1,.839-.26Zm-3-26.882v0Z' transform='translate(-200 888)' fill='%23fff'/%3E%3C/svg%3E%0A");
+    }
+    .service .list ul li a strong {
+        font-size: 17px;
+        color: #fff;
+    }
+    
+}
+@media screen and (max-width:768px){
+    .service {
+        padding: 77px 0 42px 0;
+        margin-top: 50px;
+    }
+    .service p {
+        font-size: 20px;
+    }
+    .service .tit p br {
+        display: none;
+    }
+    .service .list {
+        margin-top: 30px;
+    }
+    .service .list ul li a {
+        padding: 50px 0 15px 0;
+    }
+    .service .list ul li a::before {
+        top: 20px;
+        height: 21px;
+    }
+    .service .list ul li a strong {
+        font-size: 13px;
+        color: #fff;
+    }
+    .service .list ul li a span {
+        display: none;   
+    }
+}
