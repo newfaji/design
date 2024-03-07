@@ -712,3 +712,172 @@
         font-size: 17px;
     }
 }
+
+.cts_biz05 .join_group {
+    max-width: 600px;
+    width: 100%;
+    margin: 50px auto;
+}
+.cts_biz05 .join_group h2 {
+    font-size: 35px;
+    font-weight: 700;
+    color: #1d1d1d;
+    margin-bottom: 10px;
+}
+.cts_biz05 .join_group .agree_box {
+    width: 100%;
+    height: 277px;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 20px;
+    margin-top: 20px;
+}
+.cts_biz05 .join_group .agree_box .inner1 {
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+}
+.cts_biz05 .join_group .agree_box .inner1::-webkit-scrollbar {
+    width: 5px;
+    height: 8px;
+    background-color: transparent;
+}
+.cts_biz05 .join_group .agree_box .inner1::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 3px;
+}
+.cts_biz05 .join_group .agree_box .inner2 {
+    white-space: pre-line;
+}
+.cts_biz05 .join_group .agree_box strong {
+    font-size: 20px;
+    font-weight: 700;
+    color: #1d1d1d;
+}
+.cts_biz05 .join_group .agree_btn {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 10px 0 80px 0;
+}
+.cts_biz05 .join_group .agree_btn input {
+    display: none;/* 숨김 */
+}
+.cts_biz05 .join_group .agree_btn label {
+    padding: 5px 0 5px 35px;
+    display: block;
+    position: relative; /* before 정렬의 기준 */
+    cursor: pointer; /* 마우스를 올릴때 포인트를 손가락으로 */
+}
+.cts_biz05 .join_group .agree_btn label::before {
+    position: absolute;
+    left: 5px;
+    top: 4px;
+    width: 21px;
+    height: 21px;
+    content: "";
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20.99 20.99'%3E%3Cpath id='check_circle_FILL0_wght200_GRAD0_opsz24' d='M128.818-826.6l-2.911-2.911a.588.588,0,0,0-.4-.175.545.545,0,0,0-.424.175.573.573,0,0,0-.186.413.573.573,0,0,0,.186.413l3.077,3.077a.9.9,0,0,0,.659.283.9.9,0,0,0,.659-.283l6.387-6.387a.588.588,0,0,0,.175-.4.545.545,0,0,0-.175-.424.572.572,0,0,0-.413-.186.572.572,0,0,0-.413.186Zm1.681,7.589a10.228,10.228,0,0,1-4.093-.826,10.6,10.6,0,0,1-3.334-2.242,10.593,10.593,0,0,1-2.245-3.331A10.207,10.207,0,0,1,120-829.5a10.228,10.228,0,0,1,.826-4.093,10.605,10.605,0,0,1,2.242-3.334,10.593,10.593,0,0,1,3.331-2.245,10.208,10.208,0,0,1,4.091-.827,10.228,10.228,0,0,1,4.093.826,10.6,10.6,0,0,1,3.334,2.242,10.594,10.594,0,0,1,2.245,3.331,10.208,10.208,0,0,1,.827,4.092,10.228,10.228,0,0,1-.826,4.093,10.607,10.607,0,0,1-2.242,3.334,10.6,10.6,0,0,1-3.331,2.245A10.208,10.208,0,0,1,130.5-819.01Zm0-1.166a9,9,0,0,0,6.618-2.711,9,9,0,0,0,2.711-6.618,9,9,0,0,0-2.711-6.618,9,9,0,0,0-6.618-2.711,9,9,0,0,0-6.618,2.711,9,9,0,0,0-2.711,6.618,9,9,0,0,0,2.711,6.618A9,9,0,0,0,130.495-820.176ZM130.495-829.505Z' transform='translate(-120 840)' fill='%23999'/%3E%3C/svg%3E%0A");
+}
+/* html에서 미리 체크되어 있게 <input type="radio" checked>를 주면 
+   css에서는 input:checked 로 선택 */
+.cts_biz05 .join_group .agree_btn input:checked + label::before {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20.99 20.99'%3E%3Cpath id='check_circle_FILL1_wght200_GRAD0_opsz24' d='M128.818-826.6l-2.911-2.911a.587.587,0,0,0-.4-.175.545.545,0,0,0-.424.175.573.573,0,0,0-.186.413.572.572,0,0,0,.186.413l3.077,3.077a.9.9,0,0,0,.659.283.9.9,0,0,0,.659-.283l6.387-6.387a.587.587,0,0,0,.175-.4.545.545,0,0,0-.175-.424.572.572,0,0,0-.413-.186.572.572,0,0,0-.413.186Zm1.681,7.589a10.228,10.228,0,0,1-4.093-.826,10.606,10.606,0,0,1-3.334-2.242,10.593,10.593,0,0,1-2.245-3.331A10.207,10.207,0,0,1,120-829.5a10.229,10.229,0,0,1,.826-4.093,10.606,10.606,0,0,1,2.242-3.334,10.6,10.6,0,0,1,3.331-2.245,10.208,10.208,0,0,1,4.091-.827,10.229,10.229,0,0,1,4.093.826,10.606,10.606,0,0,1,3.334,2.242,10.6,10.6,0,0,1,2.245,3.331,10.207,10.207,0,0,1,.827,4.091,10.228,10.228,0,0,1-.826,4.093,10.6,10.6,0,0,1-2.242,3.334,10.594,10.594,0,0,1-3.331,2.245A10.208,10.208,0,0,1,130.5-819.01Z' transform='translate(-120 840)' fill='%23f51919'/%3E%3C/svg%3E%0A");
+}
+.cts_biz05 .join_group .info .info_box {
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    margin-bottom: 50px;
+}
+.cts_biz05 .join_group .info .info_box > div {
+    height: 90px;
+    display: flex;
+    align-items: center; /* 위아래 가운데 */
+    border-bottom: 1px solid #ccc;
+}
+.cts_biz05 .join_group .info .info_box > div:last-child {
+    border-bottom: 0;
+}
+.cts_biz05 .join_group .info .info_box .user_id label, 
+.cts_biz05 .join_group .info .info_box .user_pw label,
+.cts_biz05 .join_group .info .info_box .user_mail label {
+    width: 105px;
+    height: 100%;
+    font-size: 0;
+    line-height: 0;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+.cts_biz05 .join_group .info .info_box .user_id label {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 35.454 33.506'%3E%3Cpath id='person_FILL0_wght200_GRAD0_opsz24' d='M217.727-729.421a7.316,7.316,0,0,1-5.366-2.232,7.316,7.316,0,0,1-2.232-5.366,7.316,7.316,0,0,1,2.232-5.366,7.316,7.316,0,0,1,5.366-2.232,7.316,7.316,0,0,1,5.366,2.232,7.316,7.316,0,0,1,2.232,5.366,7.316,7.316,0,0,1-2.232,5.366A7.316,7.316,0,0,1,217.727-729.421ZM200-713.74v-1.539a5.182,5.182,0,0,1,.913-2.934,6.129,6.129,0,0,1,2.457-2.121,35.93,35.93,0,0,1,7.174-2.579,30.746,30.746,0,0,1,7.183-.86,30.746,30.746,0,0,1,7.183.86,35.93,35.93,0,0,1,7.174,2.579,6.129,6.129,0,0,1,2.457,2.121,5.182,5.182,0,0,1,.913,2.934v1.539a2.544,2.544,0,0,1-.757,1.873,2.544,2.544,0,0,1-1.873.757H202.63a2.544,2.544,0,0,1-1.873-.757A2.544,2.544,0,0,1,200-713.74Zm2.532.1h30.389v-1.636a2.627,2.627,0,0,0-.543-1.583,4.369,4.369,0,0,0-1.5-1.252,32.14,32.14,0,0,0-6.447-2.321,28.314,28.314,0,0,0-6.7-.806,28.315,28.315,0,0,0-6.7.806,32.139,32.139,0,0,0-6.447,2.321,4.37,4.37,0,0,0-1.5,1.252,2.627,2.627,0,0,0-.543,1.583Zm15.195-18.311a4.877,4.877,0,0,0,3.577-1.488,4.877,4.877,0,0,0,1.488-3.577A4.877,4.877,0,0,0,221.3-740.6a4.877,4.877,0,0,0-3.577-1.488,4.877,4.877,0,0,0-3.577,1.488,4.877,4.877,0,0,0-1.488,3.577,4.877,4.877,0,0,0,1.488,3.577A4.877,4.877,0,0,0,217.727-731.954ZM217.727-737.019ZM217.727-713.642Z' transform='translate(-200 744.616)' fill='%23999'/%3E%3C/svg%3E%0A");
+    background-size: 35px auto;
+}
+.cts_biz05 .join_group .info .info_box .user_pw label {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 27.223 35'%3E%3Cpath id='lock_FILL0_wght200_GRAD0_opsz24' d='M203.141-805a3.028,3.028,0,0,1-2.223-.918,3.028,3.028,0,0,1-.918-2.223v-17.052a3.028,3.028,0,0,1,.918-2.223,3.028,3.028,0,0,1,2.223-.918h2.692v-3.889a7.5,7.5,0,0,1,2.264-5.514A7.5,7.5,0,0,1,213.611-840a7.5,7.5,0,0,1,5.514,2.264,7.5,7.5,0,0,1,2.264,5.514v3.889h2.692a3.028,3.028,0,0,1,2.223.918,3.028,3.028,0,0,1,.918,2.223v17.052a3.028,3.028,0,0,1-.918,2.223,3.028,3.028,0,0,1-2.223.918Zm0-1.944h20.94a1.165,1.165,0,0,0,.86-.337,1.164,1.164,0,0,0,.337-.86v-17.052a1.165,1.165,0,0,0-.337-.86,1.165,1.165,0,0,0-.86-.337h-20.94a1.165,1.165,0,0,0-.86.337,1.165,1.165,0,0,0-.337.86v17.052a1.164,1.164,0,0,0,.337.86A1.165,1.165,0,0,0,203.141-806.944Zm10.47-6.806a2.818,2.818,0,0,0,2.073-.843,2.818,2.818,0,0,0,.843-2.073,2.818,2.818,0,0,0-.843-2.073,2.818,2.818,0,0,0-2.073-.843,2.818,2.818,0,0,0-2.073.843,2.818,2.818,0,0,0-.843,2.073,2.818,2.818,0,0,0,.843,2.073A2.818,2.818,0,0,0,213.611-813.75Zm-5.833-14.583h11.667v-3.889a5.626,5.626,0,0,0-1.7-4.132,5.626,5.626,0,0,0-4.132-1.7,5.626,5.626,0,0,0-4.132,1.7,5.626,5.626,0,0,0-1.7,4.132Zm-5.833,21.389v0Z' transform='translate(-200 840)' fill='%23999'/%3E%3C/svg%3E%0A");
+    background-size: 27px auto;
+}
+.cts_biz05 .join_group .info .info_box .user_mail label {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 31.752 24.696'%3E%3Cpath id='mail_FILL0_wght200_GRAD0_opsz24' d='M122.85-735.3a2.76,2.76,0,0,1-2.034-.816,2.76,2.76,0,0,1-.816-2.034v-19a2.76,2.76,0,0,1,.816-2.034A2.76,2.76,0,0,1,122.85-760H148.9a2.76,2.76,0,0,1,2.034.816,2.76,2.76,0,0,1,.816,2.034v19a2.76,2.76,0,0,1-.816,2.034,2.76,2.76,0,0,1-2.034.816Zm27.139-21.372-13.322,8.722a2.691,2.691,0,0,1-.378.165,1.254,1.254,0,0,1-.412.066,1.254,1.254,0,0,1-.412-.066,2.692,2.692,0,0,1-.378-.165l-13.322-8.722v18.522a1.057,1.057,0,0,0,.305.78,1.056,1.056,0,0,0,.78.305H148.9a1.056,1.056,0,0,0,.78-.305,1.056,1.056,0,0,0,.305-.78Zm-14.112,7.26,13.569-8.82H122.307Zm-14.112-7.26v0Z' transform='translate(-120 760)' fill='%23999'/%3E%3C/svg%3E%0A");
+    background-size: 32px auto;
+}
+.cts_biz05 .join_group .info .info_box .user_id input,
+.cts_biz05 .join_group .info .info_box .user_pw input {
+    width: calc(100% - 150px);
+}
+.cts_biz05 .join_group .info .info_box input[type="text"],
+.cts_biz05 .join_group .info .info_box input[type="password"] {
+    font-size: 25px;
+    font-weight: 700;
+    color: #1d1d1d;
+    border: 0;
+    outline: 0;
+}
+.cts_biz05 .join_group .info .info_box input[type="text"]::placeholder,
+.cts_biz05 .join_group .info .info_box input[type="password"]::placeholder {
+    font-weight: 400;
+    color: #aaa;
+}
+.cts_biz05 .join_group .info .info_box .user_mail input {
+    width: calc(100% - 292px);
+}
+.cts_biz05 .join_group .info .info_box .user_mail select {
+    font-size: 25px;
+    width: 150px;
+    border: 0;
+    outline: 0;
+}
+.cts_biz05 .join_group .info .info_box .user_gender {
+    justify-content: center;/* 좌우에 가운데 */
+}
+.cts_biz05 .join_group .info .info_box .user_gender input {
+    display: none; /* 숨김 */
+}
+.cts_biz05 .join_group .info .info_box .user_gender label {
+    width: calc(50% - 38px);
+    margin: 0 5px;
+    line-height: 48px;
+    border: 1px solid #ccc;
+    border-radius: 14px;
+    font-size: 20px;
+    font-weight: 700;
+    color: #666;
+    text-align: center;
+    cursor: pointer;
+}
+.cts_biz05 .join_group .info .info_box .user_gender input:checked + label {
+    border: 2px solid #F51919;
+    color: #F51919;
+}
+.cts_biz05 .join_group .info input[type="submit"] {
+    width: calc(100% - 80px);
+    margin: 0 40px;
+    line-height: 80px;
+    background-color: #F51919;
+    border-radius: 15px;
+    border: 0;
+    font-size: 25px;
+    font-weight: 700;
+    color: #fff;
+    cursor: pointer;/* 오버시 마우스 포인터 손가락 */
+}
