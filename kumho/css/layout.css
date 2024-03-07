@@ -593,6 +593,7 @@
     display: block;
     line-height: 40px;
     padding: 0 20px;
+    white-space: nowrap;
 }
 .lnb ul li.on a,
 .lnb ul li a:hover {

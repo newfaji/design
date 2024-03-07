@@ -23,16 +23,35 @@ address, em {
 /* 글자를 두껍게하고 글자크기를 조정하는 태그 - 
    body가 선언한 속성대로 적용될 수 있도록 초기화 
    브라우저가 기본적으로 적용한 스타일 적용되지 않도록 막기 */
-h1, h2, h3, h4, h5, h6, strong {
+h1, h2, h3, h4, h5, h6, strong, th {
     font-size: inherit;
     font-weight: inherit;
+}
+/* 기본 서체가 적용되지 않는 요소  */
+input, button, select {
+    color: inherit; /* 브라우저가 주는 값 삭제 */
+    font-family: inherit; /* button은 서체도 바뀜 - 상속 */
+    font-size: inherit; /* button은 글자크기도 바뀜 - 상속 */
 }
 /* button태그는 기본스타일 많음 */
 button {
     background-color: transparent; /*배경투명*/
     border: 0; /* 테두리 삭제 */
-    color: inherit; /* 브라우저가 주는 값 삭제 */
-    font-family: inherit; /* button은 서체도 바뀜 - 상속 */
-    font-size: inherit; /* button은 글자크기도 바뀜 - 상속 */
     cursor: pointer; /* 마우스를 오버하면 손바닥 모양 */
+}
+/* table태그 기본 속성 */
+table {
+    border-collapse: collapse;/* 테이블의 셀의 경계여백 삭제 */
+    border: 0;/* 테이블에 border가 있음 삭제 */
+}
+table caption {
+    /* 테이블 태그는 접근성상 caption을 줘야하는데 화면에는 표시 안함 */
+    display: none;
+}
+/* form태그의 기본 속성 */
+fieldset {
+    border: 0; /* 테두리삭제 */
+}
+legend {
+    display: none; /* form의 제목 - 접근성때문에 입력 */
 }
