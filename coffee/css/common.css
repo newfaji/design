@@ -1,0 +1,101 @@
+@charset "utf-8"; /* 이css문서는 UTF-8방식으로 인코딩 되어 있습니다. */
+
+/* 한글웹폰트 */
+@font-face {
+    font-family: 'Pretendard';
+    font-weight: 300;
+    font-display: swap;
+    src: local('Pretendard Light'), url(../fonts/Pretendard-Light.woff2) format('woff2'), url(../fonts/Pretendard-Light.woff) format('woff');
+}
+@font-face {
+    font-family: 'Pretendard';
+    font-weight: 900;
+    font-display: swap;
+    src: local('Pretendard Black'), url(../fonts/Pretendard-Black.woff2) format('woff2'), url(../fonts/Pretendard-Black.woff) format('woff');
+}
+@font-face {
+    font-family: 'Bright';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_three@1.4/Bright.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+*::selection {
+    background-color: #090606;
+    color: #876f53;
+}
+*::-moz-selection { /* 호환성을 위한 코드 */
+    background-color: #090606;
+    color: #876f53;
+}
+html, body {
+    font-family: 'Pretendard', sans-serif; /* 서체 serif 명조 sans-serif 고딕 */
+    font-size: 17px; /* 크기 */
+    color: #090606; /* 글자색상 */
+    font-weight: 300; /* 글자의 두께 */
+    line-height: 1.2; /* auto */
+    word-break: keep-all; /* 단어를 묶어서 줄바꿈 */
+    word-wrap: break-word; /* 만약 단어가 엄청 길면 분리해서 줄바꿈 */
+}
+.f_bright {
+    font-family: 'Bright', serif;
+}
+.wrapper { /* 홈페이지의 넓이를 제한하고 가운데 정렬 */
+    width: 1600px; /* 홈페이지 넓이 */
+    margin: 0 auto;  /* 가운데 정렬 */
+}
+#wrap { /* id="wrap"에 적용되는 스타일 */
+    width: 100%;
+    overflow: hidden;
+}
+
+@media screen and (max-width:1640px){
+    .wrapper { 
+        width: auto; 
+        margin: 0 20px;  
+    }
+}/*media*/
+@media screen and (max-width:1024px){
+    html, body {
+        font-size: 15px;
+    }
+}/*media*/
+@media screen and (max-width:768px){
+    html, body {
+        font-size: 13px;
+    }
+}
+
+.skipnav {
+    position: absolute;
+    left: 0;
+    top: -100px;
+    z-index: 1000000000000;
+    width: 100%;
+}
+.skipnav a {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    line-height: 50px;
+    text-align: center;
+    background-color: #F51919;
+    color: #fff;
+    font-size: 17px;
+    font-weight: 700;
+}
+.skipnav a[href="#gnb"] {
+    background-color: #1d1d1d;
+}
+.skipnav a:focus {
+    top: 100px;
+}
+
+/*
+    파일명 : common.css
+    작성자 : 문미영
+    작성일 : 2024.02.28
+    설  명 : 홈페이지 전체에 공통으로 적용되는 스타일을 저장
+             문자스타일 등의 기본스타일만 저장
+
+*/
