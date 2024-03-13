@@ -484,7 +484,10 @@
 }
 
 .service {
-    background: url(../images/main/service_bg.png) no-repeat center center / cover;
+    background-image: url(../images/main/service_bg.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
     color: #fff;
     padding: 166px 0 113px 0;
     margin-top: 100px;
