@@ -1,0 +1,358 @@
+header {
+    position: fixed; /* 상단에 고정 */
+    left: 0;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+    background-color: #ede8e3;
+    border-bottom: 1px solid #bfbbb7;
+    transition: 0.5s; /* transform 0.5s 해당속성만 애니메이션 */
+}
+header .head_top {
+    height: 77px;
+}
+header .head_sub {
+    height: 73px;
+}
+header .logo {
+    position: absolute; /* header를 기준으로 정렬 */
+    left: 50%;
+    top: 15px;
+    transform: translate(-50%, 0);
+    /*
+        가운데 정렬을 absolute로 해야하고 넓이가 변경될 수도 있음
+        left: calc(50% - 넓이반) 으로 가운데정렬을 하면
+        넓이가 변경되면 계속 값을 변경해야함
+        넓이가 변경되더라도 계속 가운데
+        left: 50% ---- 나의 정렬기준에서 가운데
+        transform: translate(-50%, 0)  -- 나 자신 사이즈의 절반을 왼쪽으로 이동
+    */
+}
+header .logo a {
+    display: block;
+    width: 95px;
+    height: 63px;
+    background: url(../images/common/logo.svg) no-repeat center center / contain;
+    font-size: 0;
+    line-height: 0;
+}
+header .tnb1 {
+    float: left;
+    margin: 20px 0 0 82px;
+}
+header .tnb2 {
+    float: right;
+    margin: 20px 82px 0 0;
+}
+header .tnb1 ul,
+header .tnb2 ul {
+    display: flex;
+}
+header .tnb1 ul li,
+header .tnb2 ul li {
+    margin-right: 35px;
+    position: relative; /* after 정렬의 기준 */
+    font-size: 0.882rem;
+}
+header .tnb1 ul li:last-child,
+header .tnb2 ul li:last-child {
+    margin-right: 0;
+}
+header .tnb1 ul li::after,
+header .tnb2 ul li::after {
+    position: absolute; /* li를 기준으로 정렬 */
+    right: -20px;
+    top: 7px;
+    width: 3px;
+    height: 3px;
+    border-radius: 100%;
+    background-color: #bfbbb7;
+    content: "";
+}
+header .tnb1 ul li:last-child:after,
+header .tnb2 ul li:last-child:after {
+    display: none;
+}
+header .gnb .gnb_open,
+header .gnb .gnb_close {
+    display: none; /*숨김*/
+}
+header .gnb .depth1 {
+    display: flex;
+    text-align: center;
+}
+header .gnb .depth1 > li {
+    width: 16.66%;
+}
+header .gnb .depth1 > li > a {
+    display: block;
+    line-height: 73px;
+    font-size: 1.294rem;
+    font-weight: 900;
+    white-space: nowrap; /* 무조건 한줄 */
+}
+header .gnb .depth2 {
+    padding: 15px 0 0 0; 
+    /* 오버해서 나타나는 메뉴는 여백을 padding으로 줘야 out되지 않음 */
+    display: none;
+}
+header .gnb .depth2 > li > a {
+    display: block;
+    line-height: 40px;
+    font-size: 1.176rem;
+    white-space: nowrap; /* 무조건 한줄 */
+}
+@media screen and (max-width:1640px){
+    header .tnb1 {
+        margin-left: 0;
+    }
+    header .tnb2 {
+        margin-right: 0;
+    }
+}
+@media screen and (max-width:1320px){
+}
+@media screen and (max-width:1024px){
+
+}
+
+
+@media screen and (min-width:1025px){ /* 1025px이상 */
+    /* 메뉴오버 */
+    header.menu_over::before {
+        position: absolute; /* header를 기준으로 정렬 */
+        left: 0;
+        top: 0;
+        z-index: -1;
+        width: 100%;
+        height: 490px;
+        background-color: #ede8e3;
+        content: "";
+    }
+    header.menu_over::after {
+        position: absolute;
+        left: 0;
+        top: 150px;
+        width: 100%;
+        height: 1px;
+        background-color: #bfbbb7;
+        content: "";
+    }
+    header.menu_over .gnb .depth2 {
+        display: block;
+    }
+    header .gnb .depth1 > li.on > a {
+        color: #e80a4d;
+    }
+    header .gnb .depth1 > li.on > a span {
+        position: relative;
+    }
+    header .gnb .depth1 > li.on > a span::after {
+        position: absolute;
+        left: -5px;
+        bottom: -27px;
+        z-index: 1;
+        width: calc(100% + 10px);
+        height: 4px;
+        background-color: #e80a4d;
+        content: "";
+    }
+    header .gnb .depth2 > li > a:hover {
+        color: #e80a4d;
+        font-weight: 900;
+    }
+
+    /* 메뉴고정 */
+    header.fixed {
+        height: 100px;
+    }
+    header.fixed .wrapper {
+        width: auto;
+    }
+    header.fixed .head_top {
+        height: auto;
+    }
+    header.fixed .head_sub {
+        height: auto;
+    }
+    header.fixed .tnb1,
+    header.fixed .tnb2 {
+        display: none;
+    }
+    header.fixed .logo {
+        left: 20px;
+        top: 20px;
+        transform: translate(0, 0);
+    }
+    header.fixed .gnb .depth1 {
+        justify-content: flex-end;
+        margin-left: 150px; /* 왼쪽에 로고가 들어갈 만큼 여백 */
+    }
+    header.fixed .gnb .depth1 > li {
+        max-width: 225px;
+        width: 16.66%; /* depth1의 넓이에 16.66% */
+    }
+    header.fixed .gnb .depth1 > li > a {
+        line-height: 100px;
+        font-size: 1.1rem;
+    }
+    header.fixed .gnb .depth2 > li > a {
+        font-size: 1rem;
+    }
+    header.fixed.menu_over::after {
+        top: 100px;
+    }
+    header.fixed .gnb .depth1 > li.on > a span::after {
+        bottom: -42px;
+    }
+}
+
+@media screen and (max-width:1024px){
+    header {
+        height: 100px;
+    }
+    header .head_top {
+        height: auto;
+    }
+    header .head_sub {
+        height: auto;
+    }
+    header .tnb1,
+    header .tnb2 {
+        display: none;
+    }
+    header .tnb2 {
+        position: absolute;
+        left: 20px;
+        top: 50%;
+        z-index: 10;
+        transform: translate(0, -50%);
+        margin: 0;
+    }
+    header .tnb2 ul li {
+        margin: 0;
+        border-width: 1px 1px 1px 0;
+        border-color: rgba(255,255,255,0.5);
+        border-style: solid;
+    }
+    header .tnb2 ul li:first-child {
+        border-left-width: 1px;
+    }
+    header .tnb2 ul li::after {
+        display: none;
+    }
+    header .tnb2 ul li a {
+        display: block;
+        padding: 10px 20px;
+        color: #fff;
+    }
+    header .logo {
+        left: 20px;
+        top: 20px;
+        transform: translate(0, 0);
+    }
+    header .logo a {
+        width: 80px;
+        height: 55px;
+    }
+    header .gnb .gnb_wrap {
+        display: none;
+        position: absolute; /* header 기준으로 */
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: #e80a4d;
+        color: #fff;
+    }
+    header .gnb .depth1 {
+        margin-top: 100px;
+        height: calc(100vh - 100px);
+        overflow-x: hidden; /* 좌우는 스크롤 금지 */
+        overflow-y: auto; /* 위아래는 스크롤 */
+        flex-direction: column; 
+        /* display:flex를 유지하면서 아래로 정렬되도록 */
+    }
+    header .gnb .depth1 > li {
+        width: auto;
+    }
+    header .gnb .depth1 > li > a {
+        font-weight: 300;
+        font-size: 1.923rem;
+        line-height: 3.846rem;
+    }
+    header .gnb .depth1 > li.on > a {
+        font-weight: 900;
+    }
+    header .gnb .on .depth2 {
+        display: block;
+        border-top: 1px solid #f485a6;
+        border-bottom: 1px solid #f485a6;
+        padding: 10px 0;
+        margin: 0 20px;
+    }
+    header .gnb .depth2 > li > a {
+        font-size: 1.154rem;
+        line-height: 1.923rem;
+    }
+    header .gnb .gnb_open {
+        display: block;
+    }
+    header .gnb .gnb_open,
+    header .gnb .gnb_close {
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 100px;
+        height: 100px;
+        font-size: 0;
+        line-height: 0;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: 40px;
+    }
+    header .gnb .gnb_open {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='27px' height='10px'%3E%3Cpath fill-rule='evenodd' fill='rgb(9, 6, 6)' d='M3.1000,9.1000 L3.1000,7.1000 L26.1000,7.1000 L26.1000,9.1000 L3.1000,9.1000 ZM-0.000,-0.000 L26.1000,-0.000 L26.1000,1.1000 L-0.000,1.1000 L-0.000,-0.000 Z'/%3E%3C/svg%3E");
+    }
+    header .gnb .gnb_close {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='21px' height='22px'%3E%3Cpath fill-rule='evenodd' fill='rgb(255, 255, 255)' d='M20.565,19.870 L19.151,21.284 L10.312,12.445 L1.475,21.286 L0.061,19.872 L8.898,11.031 L0.059,2.192 L1.473,0.778 L10.312,9.617 L19.149,0.776 L20.563,2.190 L11.726,11.031 L20.565,19.870 Z'/%3E%3C/svg%3E");
+    }
+    /* 메뉴가 열렸을때 */
+    header.menu_open .gnb .gnb_wrap {
+        display: block;
+    }
+    header.menu_open .gnb .gnb_open {
+        display: none;
+    }
+    header.menu_open .gnb .gnb_close {
+        display: block;
+    }
+    header.menu_open .tnb2 {
+        display: block;
+    }
+}
+@media screen and (max-width:768px){
+    header {
+        height: 50px;
+    }
+    header .logo {
+        top: 11px;
+    }
+    header .logo a {
+        width: 50px;
+        height: 30px;
+    }
+    header .gnb .gnb_open,
+    header .gnb .gnb_close {
+        width: 60px;
+        height: 50px;
+        background-size: 27px;
+    }
+    header .gnb .depth1 {
+        margin-top: 50px;
+        height: calc(100vh - 50px);
+    }
+    header .tnb2 ul li a {
+        padding: 5px 10px;
+    }
+}

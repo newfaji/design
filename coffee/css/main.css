@@ -4,6 +4,74 @@
 /*
     파일명 : main.css
     작성자 : 문미영
-    작성일 : 2024.02.28
+    작성일 : 2024.03.14
     설  명 : 메인페이지에만 들어가는 스타일을 저장 (header, footer 빼고 전부 다)
 */
+.container {
+    margin-top: 150px; /* header의 높이만큼 */
+}
+@media screen and (max-width:1024px){
+    .container {
+        margin-top: 100px; /* header의 높이만큼 */
+    }
+}
+@media screen and (max-width:768px){
+    .container {
+        margin-top: 50px; /* header의 높이만큼 */
+    }
+}
+.visual .swiper { 
+    
+} /* 팝업의 높이가 됨 */
+.visual .swiper-slide img {
+    width:100%;
+}
+.visual .swiper-slide img.popup_m {
+    display: none;
+}
+@media screen and (max-width:1640px){
+    .visual .swiper-slide {
+        overflow: hidden;
+    }
+    .visual .swiper-slide img {
+        width: 110%;
+        transform: translate(-5%, 0);
+    }
+}
+@media screen and (min-width:769px) and (max-width:1024px){
+    /* 769~1024까지만 적용 */
+    /* .visual .swiper-slide {
+        position: relative;
+        height: 420px;
+        overflow: hidden;
+    }
+    .visual .swiper-slide img {
+        position: absolute;
+        left: 50%;
+        top: 0;
+        width: auto;
+        height: 420px;
+        transform: translate(-50%, 0);
+    } */
+}
+
+@media screen and (max-width:768px){
+    .visual .swiper-slide img {
+        width: 100%;
+        transform: translate(0, 0);
+    }
+    .visual .swiper-slide img.popup_pc {
+        display: none;
+    }
+    .visual .swiper-slide img.popup_m {
+        display: block;
+    }
+}
+
+.product {
+    height: 1000px;
+}
+.brand {
+    height: 1000px;
+    background-color: #e80a4d;
+}

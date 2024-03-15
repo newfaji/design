@@ -30,6 +30,7 @@
 html, body {
     font-family: 'Pretendard', sans-serif; /* 서체 serif 명조 sans-serif 고딕 */
     font-size: 17px; /* 크기 */
+    background-color: #ede8e3;
     color: #090606; /* 글자색상 */
     font-weight: 300; /* 글자의 두께 */
     line-height: 1.2; /* auto */
@@ -54,9 +55,14 @@ html, body {
         margin: 0 20px;  
     }
 }/*media*/
-@media screen and (max-width:1024px){
+@media screen and (max-width:1320px){
     html, body {
         font-size: 15px;
+    }
+}/*media*/
+@media screen and (max-width:1024px){
+    html, body {
+        font-size: 14px;
     }
 }/*media*/
 @media screen and (max-width:768px){
