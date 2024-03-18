@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        .sec01, .sec03 {
+            height: 1000px;
+            background-color: beige;
+        }
+        .sec02 {
+            height: 1000px;
+            border: 1px solid #fff;
+        }
+        .box {
+            width: 500px;
+            height: 200px;
+            margin: 0 auto;
+            background-color: red;
+            margin-top: 200px;
+            transition: 0.5s;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <div class="sec01"></div>
+    <div class="sec02">
+        <div class="box"></div>
+    </div>
+    <div class="sec03"></div>
+    <script>
+        let window_h
+        let box_top
+        let scrolling
+        let box_act
+
+        function scroll_chk(){
+            window_h = $(window).height();
+            box_top = $('.box').offset().top;
+            scrolling = $(window).scrollTop();
+            box_act = box_top - scrolling;
+            console.log(box_act);
+            if(box_act < scrolling/2) {
+                $('.box').width(500 - (box_act - scrolling/2))
+            }
+        }
+        scroll_chk()
+
+        $(window).scroll(function(){
+            scroll_chk()
+        })
+
+    </script>
+</body>
+</html>

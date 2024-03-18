@@ -103,4 +103,18 @@ $(document).ready(function(){
         $("html, body").css({overflow : "visible", height : "auto"}).unbind('scroll touchmove mousewheel');
     })
 
+    // TOP 버튼 눌러서 상단으로 이동
+    $('aside button').on('click', function(){
+        $('html, body').animate({
+            scrollTop: 0
+        }, 500)
+    })
+
+    $('footer .f_nav button.f_nav_open').on('click', function(){
+        $('footer .f_nav').addClass('open')
+    })
+    $('footer .f_nav button.f_nav_close').on('click', function(){
+        $('footer .f_nav').removeClass('open')
+    })
+
 })//$(document).ready

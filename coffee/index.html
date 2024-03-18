@@ -7,6 +7,10 @@
     <!-- swiper 라이브러리 -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
+    <!-- AOS를 작동시키기 위한 css와 js파일 -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
     <link rel="stylesheet" href="css/main.css">
     <script src="js/jquery-3.7.1.min.js"></script>
     <script src="js/main.js"></script>
@@ -127,8 +131,8 @@
             </section>
             <section class="product">
                 <div class="wrapper">
-                    <h2>MD’S PICK</h2>
-                    <div class="list">
+                    <h2 data-aos="fade-up">MD’S PICK</h2>
+                    <div class="list" data-aos="fade-left">
                         <div class="swiper">
                             <ul class="swiper-wrapper">
                                 <li class="swiper-slide">
@@ -226,11 +230,11 @@
             </section>
             <section class="brand">
                 <div class="wrapper">
-                    <div class="photo"><img src="images/main/brand_bg.png" alt="커피사진"></div>
+                    <div class="photo" data-aos="fade-left"><img src="images/main/brand_bg.png" alt="커피사진"></div>
                     <div class="inner">
-                        <h2>SIGNATURE <br>BLEND</h2>
-                        <p>엄선된 원두로 직접 로스팅한 후, 폴바셋만의 비법으로 블렌딩하여 탄생한 Paul Bassett의 대표원두인 “시그니처 블랜드(Signature Blend)”와 폴 바셋에게 사사받은 오랜 경력의 전문 바리스타 출신 “Coffee Ambassador”의 관리 서비스 프로그램을 제안합니다</p>
-                        <div class="list">
+                        <h2 data-aos="fade-up">SIGNATURE <br>BLEND</h2>
+                        <p data-aos="fade-up">엄선된 원두로 직접 로스팅한 후, 폴바셋만의 비법으로 블렌딩하여 탄생한 Paul Bassett의 대표원두인 “시그니처 블랜드(Signature Blend)”와 폴 바셋에게 사사받은 오랜 경력의 전문 바리스타 출신 “Coffee Ambassador”의 관리 서비스 프로그램을 제안합니다</p>
+                        <div class="list" data-aos="fade-up">
                             <ul>
                                 <li>
                                     <img src="images/main/brand_ico01.png" alt="">
@@ -255,96 +259,132 @@
             </section>
             <section class="social">
                 <div class="wrapper">
-                    <h2>취향을 담는 시간<span class="m_skip">, 폴 바셋</span></h2>
-                    <div class="sns">
+                    <h2 data-aos="fade-up">취향을 담는 시간<span class="m_skip">, 폴 바셋</span></h2>
+                    <div class="sns" data-aos="fade-up">
                         <ul>
                             <li><a href="#n">#<span class="m_skip">폴바셋 </span>페이스북</a></li>
                             <li><a href="#n">#<span class="m_skip">폴바셋 </span>인스타그램</a></li>
                             <li><a href="#n">#<span class="m_skip">폴바셋 </span>유튜브</a></li>
                         </ul>
                     </div>
-                    <div class="list">
-                        <div class="swiper">
-                            <ul class="swiper-wrapper">
-                                <li class="swiper-slide">
-                                    <a href="#n">
-                                        <span class="photo">
-                                            <img src="images/main/social01.png" alt="">
-                                            <span class="cate"><img src="images/main/social_facebook.png" alt="페이스북"></span>
-                                        </span>
-                                        <strong>#Paul Bassett SPRING FLAVORS</strong>
-                                    </a>
-                                </li>
-                                <li class="swiper-slide">
-                                    <a href="#n">
-                                        <span class="photo">
-                                            <img src="images/main/social02.png" alt="">
-                                            <span class="cate"><img src="images/main/social_youtube.png" alt="유튜브"></span>
-                                        </span>
-                                        <strong>#폴 바셋의 첫 번째 커피 이야기</strong>
-                                    </a>
-                                </li>
-                                <li class="swiper-slide">
-                                    <a href="#n">
-                                        <span class="photo">
-                                            <img src="images/main/social03.png" alt="">
-                                            <span class="cate"><img src="images/main/social_insta.png" alt="인스타그램"></span>
-                                        </span>
-                                        <strong>#어메이징오트커피<br>#어메이징오트초콜릿 </strong>
-                                    </a>
-                                </li>
-                                <li class="swiper-slide">
-                                    <a href="#n">
-                                        <span class="photo">
-                                            <img src="images/main/social04.png" alt="">
-                                            <span class="cate"><img src="images/main/social_insta.png" alt="인스타그램"></span>
-                                        </span>
-                                        <strong>#폴 바셋 홀리데이 케이크</strong>
-                                    </a>
-                                </li>
-                                <li class="swiper-slide">
-                                    <a href="#n">
-                                        <span class="photo">
-                                            <img src="images/main/social05.png" alt="">
-                                            <span class="cate"><img src="images/main/social_facebook.png" alt="페이스북"></span>
-                                        </span>
-                                        <strong> #수능응원 이벤트!</strong>
-                                    </a>
-                                </li>
-                                <li class="swiper-slide">
-                                    <a href="#n">
-                                        <span class="photo">
-                                            <img src="images/main/social06.png" alt="">
-                                            <span class="cate"><img src="images/main/social_youtube.png" alt="유튜브"></span>
-                                        </span>
-                                        <strong>#폴 바셋에 찾아온 봄</strong>
-                                    </a>
-                                </li>
-                                <li class="swiper-slide">
-                                    <a href="#n">
-                                        <span class="photo">
-                                            <img src="images/main/social07.png" alt="">
-                                            <span class="cate"><img src="images/main/social_insta.png" alt="인스타그램"></span>
-                                        </span>
-                                        <strong>#11월 30일 폴 바셋 딸기</strong>
-                                    </a>
-                                </li>
-                                <li class="swiper-slide">
-                                    <a href="#n">
-                                        <span class="photo">
-                                            <img src="images/main/social08.png" alt="">
-                                            <span class="cate"><img src="images/main/social_insta.png" alt="인스타그램"></span>
-                                        </span>
-                                        <strong>#드라이스브루</strong>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
+                </div>
+                <div class="list" data-aos="fade-up">
+                    <div class="swiper">
+                        <ul class="swiper-wrapper">
+                            <li class="swiper-slide">
+                                <a href="#n">
+                                    <span class="photo">
+                                        <img src="images/main/social01.png" alt="">
+                                        <span class="cate"><img src="images/main/social_facebook.png" alt="페이스북"></span>
+                                    </span>
+                                    <strong>#Paul Bassett SPRING FLAVORS</strong>
+                                </a>
+                            </li>
+                            <li class="swiper-slide">
+                                <a href="#n">
+                                    <span class="photo">
+                                        <img src="images/main/social02.png" alt="">
+                                        <span class="cate"><img src="images/main/social_youtube.png" alt="유튜브"></span>
+                                    </span>
+                                    <strong>#폴 바셋의 첫 번째 커피 이야기</strong>
+                                </a>
+                            </li>
+                            <li class="swiper-slide">
+                                <a href="#n">
+                                    <span class="photo">
+                                        <img src="images/main/social03.png" alt="">
+                                        <span class="cate"><img src="images/main/social_insta.png" alt="인스타그램"></span>
+                                    </span>
+                                    <strong>#어메이징오트커피<br>#어메이징오트초콜릿 </strong>
+                                </a>
+                            </li>
+                            <li class="swiper-slide">
+                                <a href="#n">
+                                    <span class="photo">
+                                        <img src="images/main/social04.png" alt="">
+                                        <span class="cate"><img src="images/main/social_insta.png" alt="인스타그램"></span>
+                                    </span>
+                                    <strong>#폴 바셋 홀리데이 케이크</strong>
+                                </a>
+                            </li>
+                            <li class="swiper-slide">
+                                <a href="#n">
+                                    <span class="photo">
+                                        <img src="images/main/social05.png" alt="">
+                                        <span class="cate"><img src="images/main/social_facebook.png" alt="페이스북"></span>
+                                    </span>
+                                    <strong> #수능응원 이벤트!</strong>
+                                </a>
+                            </li>
+                            <li class="swiper-slide">
+                                <a href="#n">
+                                    <span class="photo">
+                                        <img src="images/main/social06.png" alt="">
+                                        <span class="cate"><img src="images/main/social_youtube.png" alt="유튜브"></span>
+                                    </span>
+                                    <strong>#폴 바셋에 찾아온 봄</strong>
+                                </a>
+                            </li>
+                            <li class="swiper-slide">
+                                <a href="#n">
+                                    <span class="photo">
+                                        <img src="images/main/social07.png" alt="">
+                                        <span class="cate"><img src="images/main/social_insta.png" alt="인스타그램"></span>
+                                    </span>
+                                    <strong>#11월 30일 폴 바셋 딸기</strong>
+                                </a>
+                            </li>
+                            <li class="swiper-slide">
+                                <a href="#n">
+                                    <span class="photo">
+                                        <img src="images/main/social08.png" alt="">
+                                        <span class="cate"><img src="images/main/social_insta.png" alt="인스타그램"></span>
+                                    </span>
+                                    <strong>#드라이스브루</strong>
+                                </a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </section>
         </div>
-        <footer></footer>
+        <aside><button>TOP</button></aside>
+        <footer>
+            <div class="wrapper">
+                <div class="f_logo"><img src="images/common/logo.svg" alt="풀바셋"></div>
+                <div class="f_link">
+                    <ul>
+                        <li class="link01"><a href="#n"><span>Mobile App</span></a></li>
+                        <li class="link02"><a href="#n"><span>Special Benefit</span></a></li>
+                        <li class="link03"><a href="#n"><span>e-shop</span></a></li>
+                    </ul>
+                </div>
+                <div class="f_nav">
+                    <button class="f_nav_open" title="열기">개인정보처리방침</button>
+                    <ul>
+                        <li><a href="#n">개인정보처리방침</a></li>
+                        <li><a href="#n">신규입점안내</a></li>
+                        <li><a href="#n">이용약관</a></li>
+                        <li><a href="#n">위치정보 서비스 이용약관</a></li>
+                        <li><a href="#n">소사이어티카드 이용약관</a></li>
+                        <li><a href="#n">기프트카드 이용약관</a></li>
+                        <li><a href="#n">고객센터</a></li>
+                        <li><a href="#n">사이트맵</a></li>
+                        <li><a href="#n">윤리 HOT-LINE</a></li>
+                    </ul>
+                    <button class="f_nav_close" title="닫기">개인정보처리방침</button>
+                </div>
+                <div class="f_info">
+                    <span>엠즈씨드(주)</span>
+                    <span>대표이사 : 권태훈</span>
+                    <span>주소 : 서울특별시 강남구 도산대로 75길 22 (청담동)</span><br>
+                    <span>사업자등록번호 : 211-88-95935</span>
+                    <span>대표번호 : 1899-8829</span>
+                    <span>개인정보관리책임자 : 정보문</span>
+                </div>
+            </div><!--//wrapper-->
+            <div class="copyright">© m’s seed Co., Ltd. All rights reserved.</div>
+        </footer>
     </div>
 </body>
 </html>
