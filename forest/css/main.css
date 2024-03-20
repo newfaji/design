@@ -1,0 +1,107 @@
+@import url(default.css);
+@import url(common.css);
+@import url(layout.css);
+/*
+    파일명 : main.css
+    작성자 : 문미영
+    작성일 : 2024.03.14
+    설  명 : 메인페이지에만 들어가는 스타일을 저장 (header, footer 빼고 전부 다)
+*/
+.visual {
+    background-color: #1CA94B;
+    color: #fff;
+}
+.tree {
+    background-color: #fff;
+}
+.biz {
+    background-color: #097CBF;
+    color: #fff;
+}
+.news {
+    background-color: #fff;
+}
+footer {
+    height: 500px;
+    background-color: #1d1d1d;
+    color: #fff;
+}
+
+/******************************** 
+    page에서 자동생성한 pagenation 
+    #fp-nav.fp-left 동일한 선택자 두개가 존재할때
+    꼭 내꺼를 먼저 적용되게 하기 위해서 
+    앞에 body를 추가함 
+    body라는 상위요소부터 선택자를 입력한 스타일이 먼저 적용됨
+**************************************/
+
+body #fp-nav.fp-left {
+    left: 40px;
+}
+body #fp-nav::before {
+    position: absolute;
+    left: 14px;
+    top: 0;
+    width: 1px;
+    height: 100%;
+    background-color: rgba(255,255,255,0.5);
+    content: "";
+}
+body #fp-nav ul li .fp-tooltip {
+    color: rgba(255,255,255,0.8);
+    font-size: 15px;
+    font-family: inherit; /* 상속 */
+    opacity: 1;
+    width: auto;
+}
+body #fp-nav ul li a span, .fp-slidesNav ul li a span {
+    height: 5px;
+    width: 5px;
+    background: rgba(255,255,255,0.5);
+}
+body #fp-nav ul li a.active span, 
+body .fp-slidesNav ul li a.active span, 
+body #fp-nav ul li:hover a.active span, 
+body .fp-slidesNav ul li:hover a.active span {
+    height: 5px;
+    width: 5px;
+    margin: -2px 0 0 -2px;
+    background-color: #fff;
+}
+body #fp-nav ul li:last-child { /* footer 동그라미 삭제 */
+    display: none;
+}
+body #fp-nav ul li, body .fp-slidesNav ul li {
+    margin: 20px 7px;
+}
+body #fp-nav ul li:hover .fp-tooltip, body #fp-nav.fp-show-active a.active + .fp-tooltip {
+    font-weight: 700;
+    text-decoration: underline;
+    color: #fff;
+}
+body #fp-nav ul li:hover a span, body .fp-slidesNav ul li:hover a span {
+    width: 5px;
+    height: 5px;
+    margin: -2px 0 0 -2px;
+}
+
+/* 검은색일때 */
+body #fp-nav[data-color='black']::before {
+    background-color: #EDEDED;
+}
+body #fp-nav[data-color='black'] ul li .fp-tooltip {
+    color: #666666;
+}
+body #fp-nav[data-color='black'] ul li a span, .fp-slidesNav ul li a span {
+    background: #ccc;
+}
+body #fp-nav[data-color='black'] ul li a.active span, 
+body .fp-slidesNav ul li a.active span, 
+body #fp-nav[data-color='black'] ul li:hover a.active span, 
+body .fp-slidesNav ul li:hover a.active span {
+    background-color: #1D1D1D;
+}
+body #fp-nav[data-color='black'] ul li:hover .fp-tooltip, 
+body #fp-nav[data-color='black'].fp-show-active a.active + .fp-tooltip {
+    color: #1D1D1D;
+}
