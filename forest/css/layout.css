@@ -64,6 +64,7 @@ header .tnb ul li.lang a {
 /* 검은색 header */
 header.black {
     color: #1d1d1d;
+    background-color: #fff;
 }
 header.black .logo a {
     background-image: url(../images/common/logo.svg);
