@@ -64,7 +64,6 @@ header .tnb ul li.lang a {
 /* 검은색 header */
 header.black {
     color: #1d1d1d;
-    background-color: #fff;
 }
 header.black .logo a {
     background-image: url(../images/common/logo.svg);
@@ -92,6 +91,7 @@ header.black .tnb ul li.lang a {
 @media screen and (max-width:768px){
     header {
         height: 50px;
+        backdrop-filter: blur(10px);
     }
     header .logo {
         margin-top: 16px;
@@ -122,5 +122,165 @@ header.black .tnb ul li.lang a {
     }
     header .tnb {
         display: none;
+    }
+}
+
+footer .footer_top {
+    background-color: #1F3D83;
+    color: #fff;
+    padding: 36px 0;
+}
+footer .footer_top .wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+footer .footer_top .mail {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+footer .footer_top .donation {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+footer .footer_top h2 {
+    font-size: 25px;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+footer .footer_top a {
+    margin-left: 45px;
+    width: 162px;
+    height: 82px;
+    border: 1px solid #2AC49E;
+    border-radius: 10px;
+    color: #2AC49E;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+footer .footer_top a span {
+    display: inline-block;
+    padding-left: 45px;
+    position: relative;
+}
+footer .footer_top a span::before {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 40px;
+    height: 35px;
+    content: "";
+    background-position: left center;
+    background-repeat: no-repeat;
+}
+footer .footer_top .mail a span::before {
+    background-image: url("data:image/svg+xml,%3Csvg width='34' height='34' viewBox='0 0 34 34' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M29.75 4.25C30.5324 4.25 31.1667 4.88427 31.1667 5.66667V28.3427C31.1667 29.1199 30.5217 29.75 29.7616 29.75H4.23838C3.4624 29.75 2.83333 29.1197 2.83333 28.3427V26.9167H28.3333V10.3417L17 20.5417L2.83333 7.79167V5.66667C2.83333 4.88427 3.4676 4.25 4.25 4.25H29.75ZM11.3333 21.25V24.0833H0V21.25H11.3333ZM7.08333 14.1667V17H0V14.1667H7.08333ZM27.7184 7.08333H6.2817L17 16.7298L27.7184 7.08333Z' fill='%232AC49E'/%3E%3C/svg%3E%0A");
+}
+footer .footer_top .donation a span::before {
+    background-image: url("data:image/svg+xml,%3Csvg width='34' height='34' viewBox='0 0 34 34' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.09001 12.7541C7.87242 12.7541 8.50667 13.3883 8.50667 14.1707C10.8226 14.1707 12.9531 14.9646 14.6409 16.295L17.715 16.2957C19.6029 16.2957 21.2991 17.1164 22.4664 18.4203L26.9234 18.4207C29.7458 18.4207 32.1826 20.0716 33.3212 22.4602C29.971 26.8811 24.5461 29.7541 18.4234 29.7541C14.4699 29.7541 11.1272 28.8995 8.42043 27.4054C8.22432 27.9487 7.70256 28.3374 7.09001 28.3374H2.84001C2.05761 28.3374 1.42334 27.7031 1.42334 26.9207V14.1707C1.42334 13.3883 2.05761 12.7541 2.84001 12.7541H7.09001ZM8.5081 17.0041L8.50667 24.1186L8.57093 24.1646C11.1122 25.9502 14.4257 26.9207 18.4234 26.9207C22.679 26.9207 26.6381 25.2836 29.5231 22.4874L29.7114 22.2981L29.5425 22.1559C28.8852 21.6417 28.0788 21.3226 27.2138 21.2638L26.9234 21.2541H23.9321C24.0355 21.7097 24.09 22.1838 24.09 22.6707V24.0874H11.34V21.2541L20.9592 21.2526L20.9105 21.1414C20.3714 20.0172 19.2565 19.2216 17.9479 19.1366L17.715 19.1291L13.565 19.1289C12.2798 17.8179 10.4889 17.0045 8.5081 17.0041ZM5.67334 15.5874H4.25667V25.5041H5.67334V15.5874ZM25.5067 7.0874C27.8538 7.0874 29.7567 8.99018 29.7567 11.3374C29.7567 13.6846 27.8538 15.5874 25.5067 15.5874C23.1594 15.5874 21.2567 13.6846 21.2567 11.3374C21.2567 8.99018 23.1594 7.0874 25.5067 7.0874ZM25.5067 9.92074C24.7243 9.92074 24.09 10.555 24.09 11.3374C24.09 12.1198 24.7243 12.7541 25.5067 12.7541C26.2891 12.7541 26.9234 12.1198 26.9234 11.3374C26.9234 10.555 26.2891 9.92074 25.5067 9.92074ZM15.59 2.8374C17.9372 2.8374 19.84 4.74018 19.84 7.0874C19.84 9.43461 17.9372 11.3374 15.59 11.3374C13.2428 11.3374 11.34 9.43461 11.34 7.0874C11.34 4.74018 13.2428 2.8374 15.59 2.8374ZM15.59 5.67074C14.8076 5.67074 14.1734 6.30499 14.1734 7.0874C14.1734 7.8698 14.8076 8.50407 15.59 8.50407C16.3725 8.50407 17.0067 7.8698 17.0067 7.0874C17.0067 6.30499 16.3725 5.67074 15.59 5.67074Z' fill='%232AC49E'/%3E%3C/svg%3E%0A");
+}
+@media screen and (max-width:1024px){
+    footer .footer_top .mail,
+    footer .footer_top .donation {
+        width: 48%;
+    }
+    footer .footer_top h2 {
+        font-size: 20px;
+    }
+    footer .footer_top p br {
+        display: none;
+    }
+    footer .footer_top a {
+        margin-left: 20px;
+    }
+}
+@media screen and (max-width:768px){
+    footer .footer_top {
+        padding: 0;
+    }
+    footer .footer_top .wrapper {
+        display: block;
+    }
+    footer .footer_top .mail,
+    footer .footer_top .donation {
+        width: auto;
+        justify-content: space-between;
+        padding: 25px 0;
+    }
+    footer .footer_top .donation {
+        position: relative;
+    }
+    footer .footer_top .donation::before {
+        position: absolute;
+        left: -20px;
+        top: 0;
+        width: calc(100% + 40px);
+        height: 1px;
+        background-color: rgba(255,255,255,0.2);
+        content: "";
+    }
+    footer .footer_top h2 {
+        font-size: 20px;
+        font-weight: 400;
+    }
+    footer .footer_top h2 strong {
+        display: block;
+        font-weight: 700;
+    }
+    footer .footer_top p {
+        display: none;
+    }
+    footer .footer_top a {
+        width: 125px;
+        height: 45px;
+    }
+    footer .footer_top a br {
+        display: none;
+    }
+    footer .footer_top a span {
+        padding-left: 20px;
+    }
+    footer .footer_top a span strong {
+        display: none;
+    }
+    footer .footer_top a span::before {
+        width: 15px;
+        height: 15px;
+        background-size: 15px auto;
+    }
+}
+
+footer .footer_sub {
+    background-color: #1D1D1D;
+    color: #fff;
+    padding: 45px 0 70px 0;
+}
+footer .footer_sub .footer_logo {
+    float: left;
+}
+footer .footer_sub  .sns {
+    float: right;
+}
+footer .footer_sub .footer_cnt {
+    margin: 0 296px 0 227px; 
+    /* 왼쪽에 로고들어가고 오른쪽에 sns가 들어갈 여백 */
+}
+@media screen and (max-width:768px){
+    footer {
+        height: auto !important;
+        min-height: auto !important;
+    }
+    footer .footer_sub .footer_logo {
+        float: none;
+    }
+    footer .footer_sub  .sns {
+        float: none;
+    }
+    footer .footer_sub .footer_cnt {
+        margin: 0; 
     }
 }

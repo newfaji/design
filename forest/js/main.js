@@ -12,20 +12,24 @@ $(document).ready(function(){
 
 		verticalCentered: true, /* 컨텐츠 요소 위아래 가운데 */
 
+        scrollOverflow: false, /* 컨텐츠가 넘쳐도 스크롤 금지 */
+
 		afterLoad: function(origin, destination, direction, trigger){
 			if((destination.index == 0) || (destination.index == 2)){ /* index가 2면 슬라이드는 세번째 슬라이드입니다. index 수는 0/1/2/3 */
-				console.log('흰색으로 바뀌어라');
+				//console.log('흰색으로 바뀌어라');
                 $('#fp-nav').attr('data-color', '')
                 $('header').removeClass('black')
 			}else{
-                console.log('검은색으로 바뀌어라');
+                $('.counter').counterUp();
+                //console.log('검은색으로 바뀌어라');
                 $('#fp-nav').attr('data-color', 'black')
                 $('header').addClass('black')
                 $('.counter').counterUp();
             }
 		},
 
-		responsiveWidth: 768 /* fullpage를 적용시키지 않을 모바일 사이즈 */
+		responsiveWidth: 768, /* fullpage를 적용시키지 않을 모바일 사이즈 */
+        
 	});
 
     const visual_swiper = new Swiper('.visual .swiper', { /* 팝업을 감싼는 요소의 class명 */
@@ -52,6 +56,22 @@ $(document).ready(function(){
             prevEl: '.swiper-button-prev',  
         },
 
+    });//swiper
+
+    const news_swiper = new Swiper('.news .swiper', { /* 팝업을 감싼는 요소의 class명 */
+        slidesPerView: 'auto', /* 넓이고정 */
+        spaceBetween: 16, /* 팝업과 팝업 사이 여백 */
+        breakpoints: {
+            768: {    /* 768px 이상일때 적용 */
+                slidesPerView: 3,
+                spaceBetween: 16,
+            },
+            1024: {   /* 1024px 이상일때 적용 */
+                slidesPerView: 4,
+                spaceBetween: 28,
+            },
+        },
+        
     });
     
-})
+})//document.ready

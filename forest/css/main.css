@@ -8,13 +8,15 @@
     설  명 : 메인페이지에만 들어가는 스타일을 저장 (header, footer 빼고 전부 다)
 */
 @media screen and (max-width:1600px){
-    section .wrapper {
+    section .wrapper,
+    footer .wrapper {
         width: auto;
         margin: 0 150px;
     }
 }
 @media screen and (max-width:1024px){
-    section .wrapper {
+    section .wrapper,
+    footer .wrapper {
         margin: 0 20px 0 20px;
     }
 }
@@ -278,6 +280,7 @@ aside.quick ul li.top a::before {
 
 @media screen and (max-width:768px){
     .tree {
+        height: auto !important;
         min-height: auto !important;
         padding: 95px 0 250px 0;
         background: url(../images/main/tree_m_bg.png) no-repeat center bottom 25px;
@@ -454,6 +457,7 @@ aside.quick ul li.top a::before {
 }
 @media screen and (max-width:768px){
     .biz {
+        height: auto !important;
         min-height: auto !important;
     }
     .biz .inner {
@@ -480,14 +484,131 @@ aside.quick ul li.top a::before {
         font-size: 17px;
     }
 }
-.news {
-    background-color: #fff;
+.news .wrapper {
+    position: relative; /* all_view 정렬의 기준 */
 }
-footer {
-    height: 500px;
-    background-color: #1d1d1d;
+.news h2 {
+    font-size: 30px;
+    font-weight: 700;
+    color: #1d1d1d;
+    margin-bottom: 30px;
+}
+.news ul li a {
+    border-top: 1px solid #3D3D3D;
+    display: block;
+}
+.news ul li a strong,
+.news ul li a span {
+    display: block;
+}
+.news ul li a .cate {
+    background-color: #2AC49E;
+    color: #fff;
+    padding: 10px 20px;
+    display: inline-block;
+}
+.news ul li a .subject {
+    font-size: 20px;
+    font-weight: 700;
+    color: #1d1d1d;
+    /* 2줄제한 */
+    line-height: 1.2;
+    height: 2.4em;
+    overflow: hidden;
+    margin: 17px 0 19px 0;
+}
+.news ul li a .date {
+    margin: 0 0 17px 0;
+}
+.news ul li a .memo {
+    display: none;
+    line-height: 1.2;
+    height: 3.6em;
+    overflow: hidden;
+}
+.news ul li a .more {
+    display: none;
+    width: 119px;
+    margin: 17px auto 0 auto;
+    padding: 9px 0;
+    text-align: center;
+    border-radius: 20px;
+    background-color: rgba(255,255,255,0.2);
+}
+.news ul li a .photo {
+    height: 150px;
+}
+.news ul li a .photo img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+/* 오버스타일 */
+.news .swiper-slide {
+    height: auto;
+}
+.news ul li a:hover {
+    background-color: #2AC49E;
+    color: #fff;
+    border-top: 0;
+    height: 100%;
+    padding: 35px 10% 0 10%;
+}
+.news ul li a:hover .cate {
+    padding: 0;
+    text-decoration: underline;
+}
+.news ul li a:hover .subject {
     color: #fff;
 }
+.news ul li a:hover .photo {
+    display: none;
+}
+.news ul li a:hover .memo {
+    display: block;
+}
+.news ul li a:hover .more {
+    display: block;
+}
+.news .all_view {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.news .all_view a {
+    display: block;
+    padding: 9px 35px;
+    border: 1px solid #3D3D3D;
+    border-radius: 30px;
+}
+.news .all_view a:hover {
+    background-color: #2AC49E;
+    border-color: #2AC49E;
+    color: #fff;
+}
+@media screen and (max-width:768px){
+    .news {
+        height: auto !important;
+        min-height: auto !important;
+        margin: 97px 0 70px 0;
+    }
+    .news ul li {
+        width: 250px;
+    }
+    .news .all_view {
+        position: relative;
+        right: auto;
+        top: auto;
+        margin: 20px 0 0 0;
+        text-align: center;
+    }
+    .news .all_view a {
+        display: inline-block;
+    }
+
+}
+
 
 /******************************** 
     page에서 자동생성한 pagenation 
