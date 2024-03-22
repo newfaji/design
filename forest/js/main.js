@@ -21,6 +21,7 @@ $(document).ready(function(){
                 console.log('검은색으로 바뀌어라');
                 $('#fp-nav').attr('data-color', 'black')
                 $('header').addClass('black')
+                $('.counter').counterUp();
             }
 		},
 
